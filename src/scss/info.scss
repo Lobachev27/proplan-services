@@ -1,0 +1,181 @@
+@import "partials/params";
+@import "partials/mixins";
+
+/*Памятка хозяину*/
+
+.info{
+  position: relative;
+  background-color: $black;
+  overflow: hidden;
+  display: none;
+  &.active{
+    display: block;
+  }
+  &:before{
+    display: none;
+    @media screen and (min-width: 992px) {
+      content: "";
+      display: block;
+      position: absolute;
+      background: url("../img/hexagon-left.png") no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 900px;
+      height: 600px;
+      top: 50px;
+      left: -500px;
+      transform: rotate(-60deg);
+    }
+    @media screen and (min-width: 1200px) {
+      left: -400px;
+    }
+  }
+  &:after{
+    display: none;
+    @media screen and (min-width: 992px) {
+      content: "";
+      display: block;
+      position: absolute;
+      background: url("../img/hexagon-right.png") no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 900px;
+      height: 600px;
+      top: -100px;
+      right: -620px;
+      transform: rotate(-60deg) scale(-1, 1);
+    }
+    @media screen and (min-width: 1200px) {
+      right: -520px;
+    }
+  }
+  &.info_spreading{
+    display: block;
+
+    & .container{
+      @media screen and (min-width: 992px) {
+        max-width: 950px;
+      }
+    }
+    & .info_list{
+      @media screen and (min-width: 992px) {
+        position: relative;
+        margin: 30px 0 40px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 117px;
+      }
+    }
+    & .info_item{
+      @media screen and (min-width: 992px) {
+        width: calc(50% - 30px);
+      }
+    }
+  }
+  & .container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 992px) {
+      max-width: 768px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  &_list{
+    margin: 20px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45em;
+    color: $white;
+  }
+  &_item{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45em;
+    color: $white;
+    margin-left: 15px;
+  }
+  &Startkit{
+    position: relative;
+    //background-color: #f9f9f9;
+    padding: 40px 0 30px;
+    overflow: hidden;
+    @media screen and (min-width: 768px) {
+      padding: 55px 0 50px;
+    }
+    @media screen and (min-width: 992px) {
+      padding: 55px 0 120px;
+    }
+    &:before{
+      content: "";
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: block;
+        position: absolute;
+        background: url("../img/info-starkit.png") no-repeat;
+        background-position: left center;
+        background-size: contain;
+        left: 0;
+        top: 58.5%;
+        transform: translateY(-50%);
+        width: 400px;
+        height: 280px;
+      }
+      @media screen and (min-width: 992px) {
+        top: 61%;
+        width: 550px;
+        height: 400px;
+      }
+    }
+    &_wrapper{
+      margin: 15px 0 0;
+      @media screen and (min-width: 768px) {
+        width: 55%;
+        max-width: 390px;
+        margin: 60px 0 0 45%;
+      }
+      @media screen and (min-width: 992px) {
+        max-width: 420px;
+      }
+      @media screen and (min-width: 1200px) {
+        max-width: 420px;
+        width: 50%;
+        margin: 60px 0 0 34.5%;
+      }
+    }
+    &_description{
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 15px;
+      @media screen and (min-width: 768px) {
+        text-align: left;
+        margin-bottom: 25px;
+      }
+    }
+    & .advantage_hexagon{
+      display: none;
+      &.three{
+        @media screen and (min-width: 992px) {
+          display: block;
+          transform: scale(1, -1);
+          top: -250px;
+          z-index: -2;
+        }
+      }
+      &.four{
+        @media screen and (min-width: 992px) {
+          display: block;
+          transform: scale(1, -1);
+          top: -250px;
+          z-index: -2;
+        }
+      }
+    }
+  }
+}

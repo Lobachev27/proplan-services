@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main">
+  <section class="posterityPage">
+    <div class="container">
+      <!--<form action="/" method="post" class="dropzone" id="my-awesome-dropzone"></form>-->
+      <h1 class="petPage_title">Добавление помета</h1>
+      <form id="posterityForm" class="posterityPage_form" action="/" enctype="multipart/form-data" method="POST">
+        <div class="posterityPage_top">
+          <div class="dropzone dropzone-previews" id="posterityImgDropzone">
+            <div class="dz-default dz-message">
+              <span>Добавить фото помета</span>
+              <span>В формате *.png, *.jpg, *jpeg не более 3 МБ</span>
+            </div>
+          </div>
+          <div class="posterityPage_column">
+            <div class="posterityPage_row">
+              <div class="posterityPage_item dtp">
+                <div class="posterityPage_text">Дата рождения помета</div>
+                <div class="posterityPage_datepicker">
+                  <input id="datepicker" class="posterityPage_calendar" name="date" type="text" autocomplete="off">
+                  <label for="datepicker"></label>
+                </div>
+              </div>
+              <div class="posterityPage_item count">
+                <div class="posterityPage_text">Количество питомцев</div>
+                <div class="posterityPage_item_box">
+                  <input class="posterityPage_input count" name="counter" type="number" min="1" autocomplete="off" value="1" required disabled>
+                  <div id="posterityMinus" class="posterityPage_input_btn minus" onclick="minus()">-</div>
+                  <div id="posterityPlus" class="posterityPage_input_btn plus" onclick="plus()">+</div>
+                </div>
+              </div>
+            </div>
+            <div class="posterityPage_row">
+              <div class="posterityPage_item">
+                <div class="posterityPage_text">Отец</div>
+                <select name="father" id="posterityPageFather">
+                  <option value="hide"></option>
+                </select>
+              </div>
+              <div class="posterityPage_item">
+                <div class="posterityPage_text">Мать*</div>
+                <select name="mother" id="posterityPageMother">
+                  <option value="hide"></option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="posterityPage_item long">
+          <div class="posterityPage_text">Прикрепите общепометную ведомость и файлы с метриками (не более 20)</div>
+          <div class="dropzone dropzone-previews" id="metricsDropzone">
+            <div class="dz-infoBlock">
+              <span>Добавить файл</span>
+              <span>В формате *.png, *.jpg, *jpeg, *pdf, *doc, *docx, *xls, *xlsx</span>
+            </div>
+          </div>
+        </div>
+        <label class="posterityPage_checkbox">
+          <input type="checkbox" name="startkitConfirm" id="requestStartkit">
+          <div class="checkbox_text">Отправить заявку на старт-кит для всех питомцев</div>
+        </label>
+        <div class="posterityPage_phone">
+          <a class="posterityPage_phone_link" href="tel:+79233423254">+7 923 342-3254</a>
+          <div class="posterityPage_phone_text">Это номер телефона, по которому мы свяжемся с Вами. Если он изменился, сообщите об этом менеджеру.</div>
+        </div>
+        <div class="petPage_btn">
+          <button id="posterityPageSubmit" class="btn btn-red btn-petPage" type="submit">Сохранить</button>
+          <a class="btn btn-black btn-petPage" href="myPets.html">Назад</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="massageModal" class="modalDialog">
+  <div class="modalDialog_container">
+    <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+    <div class="modalDialog_caption">Помет успешно добавлен</div>
+  </div>
+</div>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>

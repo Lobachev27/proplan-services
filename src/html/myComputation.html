@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main main-grey">
+  <section class="computation">
+    <div class="container">
+      <h1 class="computation_title">Мои расчеты</h1>
+      <div class="computation_container">
+        <nav class="computation_nav">
+          <a class="computation_link active" href="#calendar">Календарь беременности</a>
+          <a class="computation_link" href="#phenotypic">Калькулятор окраса</a>
+        </nav>
+        <div id="calendar">
+          <div class="computation_info">
+            <div class="computation_info_text">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки.</div>
+            <a class="btn btn-black btn-computation" href="calendarPregnancy.html">Рассчитать дату</a>
+          </div>
+          <ul class="computation_list">
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Кошка Бася</div>
+                <div class="computation_result">Дата вязки: 10.04.19</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">25.11.2019, 11:33</div>
+                <div class="computation_name">Кот Захар</div>
+                <div class="computation_result">Дата вязки:  02.07.19</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Джек + Марго</div>
+                <div class="computation_result">Дата вязки:  06.10.19</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Кошка Бася</div>
+                <div class="computation_result">Дата вязки: 10.04.19</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">25.11.2019, 11:33</div>
+                <div class="computation_name">Кот Захар</div>
+                <div class="computation_result">Дата вязки:  02.07.19</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Джек + Марго</div>
+                <div class="computation_result">Дата вязки:  06.10.19</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="phenotypic">
+          <div class="computation_info">
+            <div class="computation_info_text">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки.</div>
+            <a class="btn btn-black btn-computation" href="phenotypiс.html">Узнать окрас</a>
+          </div>
+          <ul class="computation_list">
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">25.11.2019, 11:33</div>
+                <div class="computation_name">Кот Захар</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Джек + Марго</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Кошка Бася</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">25.11.2019, 11:33</div>
+                <div class="computation_name">Кот Захар</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Джек + Марго</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+            <li class="computation_item">
+              <div class="computation_left">
+                <div class="computation_date">12.11.2019, 11:33</div>
+                <div class="computation_name">Кошка Бася</div>
+              </div>
+              <div class="computation_right">
+                <button class="computation_save"></button>
+                <button class="computation_delete" onclick="open_modal('deleteComputation')"></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="deleteComputation" class="modalDialog">
+  <div class="modalDialog_container">
+    <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+    <div class="modalDialog_caption">Вы уверены, что хотите удалить этот расчет?</div>
+    <form id="formDeleteComputation" class="modalDialog_form" onsubmit="return false;">
+      <div class="modalDialog_btnBox">
+        <button class="btn btn-red btn-modal" type="submit">Да, удалить</button>
+        <button class="btn btn-black btn-modal" onclick="close_modal()">Нет, отменить</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="massageModal" class="modalDialog">
+  <div class="modalDialog_container">
+    <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+    <div class="modalDialog_caption">Вы успешно удалили расчет</div>
+  </div>
+</div>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>

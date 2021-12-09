@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main">
+
+  @@include("./components/introGold-startkit.html", {
+    context: {
+      "title": "Что такое старт-кит <br> от Purina<sup>®</sup> PRO PLAN<sup>®</sup>?\n",
+      "description": "Старт-кит — это базовый набор полезных вещей для новых владельцев питомцев,который предоставляется заводчикам-партнерам Purina<sup>®</sup> PRO PLAN<sup>®</sup>.\n",
+      "linkPromo": "javascript:void(0);",
+      "linkLk": "lk.html",
+    }
+  })
+
+  @@include("./components/advantage.html", {
+    context: {
+      "class": "advantage_startkit",
+      "title": "Что входит в старт-кит?",
+      arr: [
+        {"number": "one", "name": "Органайзер/кейс для документов"},
+        {"number": "two", "name": "Брошюры для щенков или котят"},
+        {"number": "three", "name": "Купон"},
+        {"number": "four", "name": "Ветеринарный паспорт"},
+        {"number": "five", "name": "Пакет для пробников"},
+      ]
+    }
+  })
+
+  <section class="infoStartkit">
+    <div class="container">
+      <h2 class="title">Зачем нужен старт-кит?</h2>
+      <div class="infoStartkit_wrapper">
+        <div class="infoStartkit_description">При покупке питомца у заводчика-партнера Purina<sup>®</sup> PRO PLAN<sup>®</sup> новый владелец получает старт-кит со специальнымQR-кодом.
+          Отсканировав код при помощи мобильного телефона, владелец может зарегистрироваться в рекомендационной программе Purina<sup>®</sup> PRO PLAN<sup>®</sup> и получить дополнительные подарки.<br><br>
+          За каждую новую регистрацию заводчику начисляются баллы, которые в дальнейшем можно потратить на призы в личном кабинете рекомендационной программы.</div>
+        <a class="btn btn-red btn-infoStartkit" href="reco.html">Подробнее о реко-программе</a>
+      </div>
+    </div>
+    <div class="advantage_hexagon three"></div>
+    <div class="advantage_hexagon four"></div>
+  </section>
+
+  @@include("./components/service-startkit.html", {
+    context: {
+      "title": "Как получить старт-кит?",
+      arr: [
+        {"img": "./img/startkit-6.svg", "number": "01", "description": "<a href='https://www.proplan.ru/breeders/reco'>Зарегистрируйтесь</a><br> на портале для заводчиков и заполните все поля при регистрации\n",},
+        {"img": "./img/startkit-7.svg", "number": "02", "description": "<span>Оформите</span><br>заявку на получение старт-кита в личном кабинете, прикрепив общепомётную ведомость и краткую информацию о помёте\n",},
+        {"img": "./img/intro-startkit.png", "number": "03", "description": "<span>Получите старт-кит вместе с заказанным кормом</span>\n",},
+      ]
+    }
+  })
+
+</main>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>

@@ -1,0 +1,11 @@
+<section class="testimonial">
+  <div class="container">
+    @@for (var i = 0; i < context.arr.length; i++) {
+    <div class="testimonial_item `+context.arr[i].class+`">
+      <div class="testimonial_caption">`+context.arr[i].caption+`</div>
+      <div class="testimonial_description">`+context.arr[i].description+`</div>
+      <a class="btn `+context.arr[i].btnClass+` btn-testimonial" href="`+context.arr[i].link+`">`+context.arr[i].btnText+`</a>
+    </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,487 @@
+@import "partials/params";
+@import "partials/mixins";
+
+/*Intro*/
+
+.intro{
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: url("../img/intro.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media screen and (min-width: 768px) {
+    height: 400px;
+  }
+  @media screen and (min-width: 992px) {
+    height: 500px;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 650px;
+  }
+  @media screen and (min-width: 1600px) {
+    height: 800px;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.2;
+  }
+  & .container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 992px) {
+      display: block;
+      padding-top: 35px;
+    }
+
+    & > .title {
+      @media screen and (min-width: 992px) {
+        margin-top: 60px;
+      }
+      @media screen and (min-width: 1200px) {
+        margin-top: 100px;
+      }
+    }
+  }
+  &_line{
+    position: absolute;
+    width: calc(100% + 40px);
+    height: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1px;
+    z-index: 2;
+    @media screen and (min-width: 768px) {
+      height: 60px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 100px;
+    }
+    & .shape{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &Phenotypic{
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: url("../img/intro-phenotypic.jpg") no-repeat;
+    background-size: cover;
+    background-position: 70% center;
+    margin-bottom: 180px;
+    @media screen and (min-width: 768px) {
+      background-position: 50% center;
+      height: 400px;
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: 992px) {
+      height: 500px;
+    }
+    @media screen and (min-width: 1200px) {
+      height: 650px;
+    }
+    @media screen and (min-width: 1600px) {
+      height: 800px;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      opacity: 0.2;
+    }
+    & .container{
+      position: relative;
+      top: 100%;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: 768px) {
+        align-items: flex-start;
+        top: 0;
+        height: 100%;
+        padding-bottom: 50px;
+      }
+      @media screen and (min-width: 992px) {
+        display: block;
+        padding-top: 80px;
+      }
+      @media screen and (min-width: 1200px) {
+        padding-top: 140px;
+      }
+      @media screen and (min-width: 1600px) {
+        padding-top: 200px;
+      }
+    }
+    & .title-main{
+      font-size: 28px;
+      color: $black;
+      @media screen and (min-width: 768px) {
+        font-size: 45px;
+        max-width: 420px;
+        color: $white;
+        text-align: left;
+      }
+    }
+    & .intro_description{
+      color: $black;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 10px;
+      @media screen and (min-width: 768px) {
+        color: $white;
+        text-align: left;
+        font-size: 20px;
+        max-width: 420px;
+        margin-top: 15px;
+      }
+      @media screen and (min-width: 992px) {
+        max-width: 340px;
+      }
+    }
+    & .intro_line{
+      position: absolute;
+      width: calc(100% + 40px);
+      height: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1px;
+      z-index: 2;
+      @media screen and (min-width: 768px) {
+        height: 60px;
+      }
+      @media screen and (min-width: 992px) {
+        height: 100px;
+      }
+      & .shape{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+/*Intro с золотой линией*/
+
+.introGold{
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  &.introGold{
+    &_spreading{
+      height: 79.5vw;
+      background: url("../img/intro-spreading.jpg") no-repeat;
+      background-size: cover;
+      background-position: 22% center;
+      margin-bottom: 260px;
+      @media screen and (min-width: 768px) {
+        height: 400px;
+        background-position: center;
+        margin-bottom: 4px;
+      }
+      @media screen and (min-width: 992px) {
+        height: 500px;
+      }
+      @media screen and (min-width: 1200px) {
+        height: 650px;
+      }
+      @media screen and (min-width: 1600px) {
+        height: 800px;
+      }
+      & .container{
+        position: absolute;
+        background-color: #1c1c1c;
+        top: 79.5vw;
+        height: 260px;
+        padding-top: 20px;
+        @media screen and (min-width: 768px) {
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          padding-top: 0;
+          background-color: transparent;
+        }
+      }
+      & .introGold_wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 300px;
+        margin: 0 auto;
+        @media screen and (min-width: 768px) {
+          max-width: 300px;
+          width: 50%;
+          align-items: flex-start;
+          margin-left: 50%;
+          margin-top: 30px;
+        }
+        @media screen and (min-width: 992px) {
+          max-width: 355px;
+          margin-left: 60%;
+          margin-top: 40px;
+        }
+        @media screen and (min-width: 1200px) {
+          margin-top: 110px;
+        }
+        @media screen and (min-width: 1600px) {
+          margin-top: 180px;
+        }
+      }
+      & .introGold_description{
+        font-size: 14px;
+        color: $white;
+        line-height: 1.3em;
+        text-align: center;
+        width: 100%;
+        margin: 8px 0 14px;
+        @media screen and (min-width: 768px) {
+          font-size: 16px;
+          font-weight: 500;
+          text-align: left;
+        }
+        @media screen and (min-width: 992px) {
+          line-height: 1.7em;
+          margin: 10px 0 15px;
+        }
+      }
+    }
+    &_startkit{
+      position: relative;
+      background-color: $black;
+      height: 490px;
+      @media screen and (min-width: 768px) {
+        height: 400px;
+      }
+      @media screen and (min-width: 992px) {
+        height: 500px;
+      }
+      @media screen and (min-width: 1200px) {
+        height: 650px;
+      }
+      @media screen and (min-width: 1600px) {
+        height: 800px;
+      }
+      & .container{
+        height: 100%;
+      }
+      & .introGold_img{
+        position: absolute;
+        display: block;
+        background: url("../img/intro-startkit.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 540px;
+        height: 370px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media screen and (min-width: 768px) {
+          width: 640px;
+          height: 480px;
+          left: 70%;
+        }
+        @media screen and (min-width: 992px) {
+          width: 700px;
+          height: 620px;
+          left: 70%;
+          top: 45%;
+        }
+        @media screen and (min-width: 1600px) {
+          width: 800px;
+          height: 750px;
+          left: 70%;
+          top: 45%;
+        }
+      }
+      & .introGold_wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 290px;
+        height: 100%;
+        padding-top: 25px;
+        margin: 0 auto;
+        @media screen and (min-width: 768px) {
+          max-width: 340px;
+          width: 50%;
+          align-items: flex-start;
+          margin-left: 0;
+          padding-top: 40px;
+        }
+        @media screen and (min-width: 992px) {
+          max-width: 420px;
+          padding-top: 60px;
+        }
+        @media screen and (min-width: 1200px) {
+          padding-top: 130px;
+        }
+        @media screen and (min-width: 1600px) {
+          padding-top: 220px;
+        }
+      }
+      & .introGold_description{
+        font-size: 12px;
+        color: $white;
+        line-height: 1.3em;
+        text-align: center;
+        margin: 8px 0 14px;
+        @media screen and (min-width: 768px) {
+          font-size: 15px;
+          text-align: left;
+          line-height: 1.4em;
+          margin: 15px 0 20px;
+        }
+        @media screen and (min-width: 992px) {
+          max-width: 340px;
+        }
+      }
+      & .introGold_boxBtn{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        @media screen and (min-width: 768px) {
+          position: static;
+          transform: translateX(0);
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+    }
+    &_reco{
+      background-color: #050404;
+      height: 490px;
+      @media screen and (min-width: 768px) {
+        height: 400px;
+      }
+      @media screen and (min-width: 992px) {
+        height: 500px;
+      }
+      @media screen and (min-width: 1200px) {
+        height: 650px;
+      }
+      @media screen and (min-width: 1600px) {
+        height: 800px;
+      }
+      & .introGold_img{
+        position: absolute;
+        background: url("../img/intro-reco.png") no-repeat;
+        background-size: contain;
+        background-position: left bottom;
+        width: 100%;
+        height: 255px;
+        bottom: 0;
+        left: 0;
+        @media screen and (min-width: 768px) {
+          height: 340px;
+          left: -30px;
+        }
+        @media screen and (min-width: 992px) {
+          height: 500px;
+          left: 0;
+        }
+        @media screen and (min-width: 1200px) {
+          height: 540px;
+        }
+        @media screen and (min-width: 1600px) {
+          height: 670px;
+        }
+      }
+      & .introGold_wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 290px;
+        padding-top: 25px;
+        margin: 0 auto;
+        @media screen and (min-width: 768px) {
+          max-width: 540px;
+          padding-top: 50px;
+        }
+        @media screen and (min-width: 992px) {
+          align-items: flex-start;
+          margin-left: 50%;
+          width: 50%;
+          max-width: 420px;
+          padding-top: 60px;
+        }
+        @media screen and (min-width: 1200px) {
+          padding-top: 140px;
+        }
+        @media screen and (min-width: 1600px) {
+          padding-top: 220px;
+        }
+      }
+      & .introGold_description{
+        font-size: 14px;
+        color: $white;
+        line-height: 1.3em;
+        text-align: center;
+        margin: 8px 0 14px;
+        @media screen and (min-width: 768px) {
+          max-width: 510px;
+          font-size: 15px;
+          line-height: 1.4em;
+          margin: 15px 0 30px;
+        }
+        @media screen and (min-width: 992px) {
+          max-width: 410px;
+          font-size: 16px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  &_line{
+    position: absolute;
+    width: calc(100% + 10px);
+    height: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1px;
+    z-index: 2;
+    @media screen and (min-width: 768px) {
+      height: 80px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 125px;
+    }
+    & .shape-two{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    & .shape-three{
+      position: absolute;
+      width: 100%;
+      height: calc(100% + 2px);
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50.2%);
+      z-index: 2;
+    }
+  }
+}

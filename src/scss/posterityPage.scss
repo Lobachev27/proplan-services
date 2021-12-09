@@ -1,0 +1,729 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.posterityPage{
+  position: relative;
+  padding: 30px 0;
+  @media screen and (min-width: 768px) {
+    padding: 70px 0;
+  }
+  & .container {
+    max-width: 750px;
+  }
+  & .dropzone-previews{
+    height: 200px;
+  }
+  &_top{
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    & .posterityPage_column{
+      @media screen and (min-width: 768px) {
+        width: calc(100% - 230px);
+      }
+    }
+    & .posterityPage_row{
+      @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  &_item{
+    margin-top: 30px;
+    @media screen and (min-width: 768px) {
+      width: calc(50% - 10px);
+      margin-top: 40px;
+    }
+    &_box{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 190px;
+    }
+    &.long{
+      @media screen and (min-width: 768px) {
+        width: 100%;
+      }
+    }
+    &.dtp{
+      @media screen and (min-width: 768px) {
+        width: calc(100% - 210px);
+      }
+    }
+    &.count{
+      @media screen and (min-width: 768px) {
+        width: 190px;
+      }
+    }
+  }
+  &_text{
+    font-size: 14px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+      font-size: 15px;
+    }
+  }
+  &_input{
+    width: 100%;
+    font-size: 16px;
+    color: #888888;
+    border: 1px solid $grayLight;
+    height: 45px;
+    border-radius: 4px;
+    background-color: $grayLight;
+    outline: none;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:focus{
+      border: 1px solid $grayDark;
+      transition: 0.3s;
+    }
+    &::placeholder{
+      color: #888888;
+    }
+    &.validate-error{
+      background-color: rgba(223, 42, 39, 0.14);
+      transition: 0.3s;
+    }
+    &.count{
+      width: 100px;
+      border: 1px solid $grayDark;
+      background-color: $white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 0;
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+    }
+    &_btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      color: $white;
+      padding-bottom: 1px;
+      width: 45px;
+      height: 45px;
+      outline: none;
+      cursor: pointer;
+      &.plus{
+        background-color: $red;
+        border-radius: 0 4px 4px 0;
+        transition: 0.3s;
+        &:hover{
+          background-color: $red-hover;
+          transition: 0.3s;
+        }
+      }
+      &.minus{
+        background-color: $black;
+        transition: 0.3s;
+        &:hover{
+          background-color: $black-hover;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+  & span.validate-error{
+    color: $red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  & .select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+  }
+  & .select {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    color: #888888;
+    width: 100%;
+    height: 45px;
+    @media screen and (min-width: 992px) {
+      height: 46px;
+    }
+  }
+  & .select-styled {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #888888;
+    overflow: hidden;
+    letter-spacing: -0.4px;
+    background-color: #f7f7f7;
+    padding: 10px 25px 10px 15px;
+    transition: all 0.2s ease-in;
+    &:after {
+      content:"";
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 8px;
+      height: 15px;
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(90deg);
+      top: 50%;
+      right: 10px;
+      transition: 0.5s;
+    }
+    &:active, &.active {
+      color: $red;
+      border-radius: 5px 5px 0 0;
+      &:after {
+        background: url("../img/angle-red.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: translate(-50%, -50%) rotate(270deg);
+        transition: 0.5s;
+      }
+    }
+  }
+  & .select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    max-height: 228px;
+    list-style: none;
+    background-color: $white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    @media screen and (min-width: 992px) {
+      max-height: 230px;
+    }
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 4px;
+      width: 4px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px #f7f7f7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $red;
+      border-radius: 4px;
+      outline: none;
+      background-clip: border-box;
+      cursor: pointer;
+    }
+    & li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      height: 38px;
+      padding: 10px 15px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      letter-spacing: -0.4px;
+      border-top: 1px solid rgba(223, 42, 39, 0.8);
+      transition: all 0.15s ease-in;
+      @media screen and (min-width: 992px) {
+        height: 46px;
+      }
+      &:hover {
+        color: $white;
+        background: rgba(223, 42, 39, 0.8);
+        transition: all 0.15s ease-in;
+        &:before{
+          background-color: $white;
+          color: $red;
+          transition: all 0.15s ease-in;
+        }
+      }
+      &[rel="hide"] {
+        display: none;
+      }
+    }
+  }
+  &_datepicker{
+    position: relative;
+    width: 100%;
+  }
+  &_calendar{
+    position: relative;
+    color: #888888;
+    border: none;
+    outline:none;
+    background-color: $grayLight;
+    padding: 0 15px;
+    width: 100%;
+    height: 45px;
+    & + label {
+      position: absolute;
+      top: 50%;
+      right: 35px;
+      &:before {
+        background: url("../img/calendar.svg") no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        width: 25px;
+        height: 30px;
+        transform: translateY(-50%);
+      }
+    }
+    &:hover + label:before,
+    &:focus + label:before {
+      content: "";
+      color: $red;
+      opacity: 1;
+    }
+    &:not(:focus):not(:hover):valid {
+      opacity: 1;
+    }
+    &:not(:focus):valid + label:before {
+      content: "";
+      opacity: 1;
+    }
+    &.validate-error{
+      background-color: rgba(223, 42, 39, 0.14);
+      transition: 0.3s;
+    }
+  }
+  &_phone{
+    position: relative;
+    background-color: #F3F3F3;
+    padding: 20px 15px;
+    margin-top: 30px;
+    &_link{
+      font-size: 16px;
+      font-weight: 500;
+      display: block;
+      width: 125px;
+      transition: 0.3s;
+      &:hover{
+        color: $red;
+        transition: 0.3s;
+      }
+    }
+    &_text{
+      font-size: 12px;
+      margin-top: 15px;
+    }
+  }
+  &_checkbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    & input {
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      top: 0;
+      left: 0;
+      order: -1;
+      z-index: -1;
+      opacity: 0;
+      &:checked ~ .checkbox_text:before {
+        background-color: $red;
+        border: 1px solid $red;
+      }
+      &:checked ~ .checkbox_text:after {
+        display: block;
+      }
+    }
+    & .checkbox_text{
+      order: -1;
+      position: relative;
+      display: flex;
+      font-size: 12px;
+      color: #888888;
+      padding-left: 32px;
+      width: 100%;
+      line-height: 1.4em;
+      padding-top: 3px;
+      cursor: pointer;
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        border: 1px solid #888888;
+        border-radius: 3px;
+        top: 0;
+        left: 0;
+        width: 19px;
+        height: 19px;
+        background-color: transparent;
+        transition: all 0.3s;
+      }
+      &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        background: url("../img/accept.svg") no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 15px;
+        height: 15px;
+        top: 1px;
+        left: 2px;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+#posterityImgDropzone {
+  position: relative;
+  background-color: $white;
+  border: 1px dashed $grayDark;
+  border-radius: 50%;
+  border-image: none;
+  width: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  padding: 0;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    margin: 40px 0 0;
+  }
+  & .dz-default.dz-message{
+    padding: 20px;
+    & span{
+      display: block;
+      &:nth-child(1){
+        position: relative;
+        font-size: 14px;
+        padding-top: 45px;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 25px;
+          height: 25px;
+          background: url("../img/icon-plus-thin.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(2){
+        font-size: 11px;
+        margin-top: 10px;
+      }
+    }
+  }
+  /*& .dz-preview.dz-error{
+    display: none;
+  }*/
+  & .dz-preview{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 0;
+    & .dz-image{
+      width: 100%;
+      height: 100%;
+      & img{
+        width: 100%;
+        height: 100%;
+        /*object-position: center;
+        object-fit: cover;*/
+      }
+    }
+    & .dz-details{
+      background-color: $grayLight;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & .dz-size{
+        display: block;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      & .dz-filename{
+        display: block;
+        font-size: 16px;
+        max-width: 100%;
+      }
+    }
+    & .dz-progress{
+      opacity: 0;
+    }
+    & .dz-error-mark{
+      z-index: 100;
+      & svg{
+        display: none;
+      }
+    }
+    & .dz-remove{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      bottom: -2px;
+      width: 100%;
+      padding-top: 5px;
+      font-size: 12px;
+      color: $white;
+      background-color: $red;
+      height: 30px;
+      text-decoration: none;
+      z-index: 100;
+      transition: opacity 0.3s ease-in;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &:hover{
+      & .dz-remove{
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+  & .dz-error-message{
+    width: 200px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    &:after{
+      left: 94px;
+    }
+  }
+}
+
+#metricsDropzone {
+  position: relative;
+  background-color: $white;
+  /*border: 1px dashed $red;*/
+  border: none;
+  border-image: none;
+  width: 170px;
+  min-width: 170px;
+  /*max-height: 170px;*/
+  height: auto;
+  min-height: 170px;
+  /*max-height: 170px;*/
+  /*overflow: hidden;*/
+  padding: 0;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 400px) {
+    justify-content: space-between;
+    width: 350px;
+  }
+  @media screen and (min-width: 590px) {
+    justify-content: flex-start;
+    width: 540px;
+  }
+  @media screen and (min-width: 768px) {
+    margin: 30px 0 0;
+    width: auto;
+  }
+  & .dz-default.dz-message{
+    display: none;
+  }
+  & .dz-infoBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 170px;
+    height: 170px;
+    border: 1px dashed $grayDark;
+    pointer-events: none;
+    & span{
+      display: block;
+      &:nth-child(1){
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 45px;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 25px;
+          height: 25px;
+          background: url("../img/icon-plus-thin.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(2){
+        font-size: 11px;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+  & .dz-preview.dz-error{
+    display: none;
+  }
+  & .dz-preview.dz-image-preview{
+    & .dz-image{
+      border: 1px solid $grayDark;
+    }
+  }
+  & .dz-preview{
+    /*position: absolute;*/
+    position: relative;
+    margin: 0;
+    /*border: 1px solid $grayDark;*/
+    height: 170px;
+    width: 170px;
+    margin-top: 22px;
+    @media screen and (min-width: 590px) {
+      margin-left: 14px;
+    }
+    @media screen and (min-width: 768px) {
+      margin-left: 9px !important;
+    }
+    @media screen and (min-width: 992px) {
+      margin-left: 22px !important;
+    }
+    &:nth-child(3){
+      @media screen and (min-width: 400px) {
+        margin-top: 0;
+      }
+    }
+    &:nth-child(4){
+      @media screen and (min-width: 590px) {
+        margin-top: 0;
+      }
+    }
+    &:nth-child(5){
+      @media screen and (min-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(3n+2){
+      @media screen and (min-width: 590px) {
+        margin-left: 0;
+      }
+    }
+    &:nth-child(4n+2){
+      @media screen and (min-width: 768px) {
+        margin-left: 0 !important;
+      }
+    }
+    & .dz-image{
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      & img{
+        width: 100%;
+        height: 100%;
+        /*object-position: center;
+        object-fit: cover;*/
+      }
+    }
+    & .dz-details{
+      background-color: $grayLight;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & .dz-size{
+        display: block;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      & .dz-filename{
+        display: block;
+        font-size: 16px;
+        max-width: 100%;
+      }
+    }
+    & .dz-remove{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 0;
+      width: 100%;
+      font-size: 12px;
+      color: $white;
+      background-color: $red;
+      height: 18px;
+      text-decoration: none;
+      z-index: 100;
+      transition: opacity 0.3s ease-in;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+    & .dz-progress{
+      opacity: 0;
+    }
+    & .dz-error-mark{
+      z-index: 100;
+      & svg{
+        display: none;
+      }
+    }
+    &:hover{
+      & .dz-remove{
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+  & .dz-error-message{
+    width: 200px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    &:after{
+      left: 94px;
+    }
+  }
+}

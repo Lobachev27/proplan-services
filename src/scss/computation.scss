@@ -1,0 +1,236 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.computation{
+  position: relative;
+  padding: 30px 0;
+  @media screen and (min-width: 768px) {
+    padding: 70px 0 120px;
+  }
+  & .container{
+    max-width: 750px;
+  }
+  &_title{
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+  &_container{
+    position: relative;
+    margin-top: 25px;
+  }
+  &_nav{
+    background-color: $white;
+    border-radius: 10px 10px 0 0;
+    padding: 20px 15px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 0;
+    }
+  }
+  &_link{
+    display: block;
+    font-size: 16px;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+      text-align: center;
+      border-bottom: 3px solid $white;
+      padding-bottom: 15px;
+    }
+    &:first-child{
+      margin-bottom: 10px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+    &.active{
+      font-weight: 700;
+      color: $red;
+      @media screen and (min-width: 768px) {
+        border-bottom: 3px solid $red;
+      }
+    }
+  }
+  &_info{
+    position: relative;
+    background-color: $white;
+    border-radius: 0 0 10px 10px;
+    padding: 20px 15px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+    }
+    &_text{
+      font-size: 12px;
+      line-height: 1.25em;
+      margin-bottom: 20px;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+        width: calc(100% - 240px);
+        margin-bottom: 0;
+      }
+    }
+  }
+  &_list{
+    position: relative;
+    list-style: none;
+  }
+  &_item{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin-top: 15px;
+    @media screen and (min-width: 768px) {
+      padding: 20px 30px;
+    }
+  }
+  &_left{
+    width: calc(100% - 60px);
+    @media screen and (min-width: 768px) {
+      width: calc(100% - 120px);
+    }
+  }
+  &_right{
+    width: 40px;
+    min-width: 40px;
+    @media screen and (min-width: 768px) {
+      width: 100px;
+      min-width: 100px;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 30px;
+    }
+  }
+  &_date{
+    font-size: 14px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 25px;
+    }
+  }
+  &_name{
+    font-size: 21px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+  }
+  &_result{
+    font-size: 14px;
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+  }
+  &_setting{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    border: 1px solid $red;
+    border-radius: 50%;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+    &:hover{
+      background-color: $red-hover;
+      border: 1px solid $red-hover;
+      transition: 0.3s;
+      &:before{
+        background: url("../img/icon-setting-white.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: url("../img/icon-setting.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &_save{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: $red;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+    &:hover{
+      background-color: $red-hover;
+      transition: 0.3s;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: url("../img/icon-save.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &_delete{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    border: 1px solid $red;
+    border-radius: 50%;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover{
+      background-color: $red-hover;
+      border: 1px solid $red-hover;
+      transition: 0.3s;
+      &:before{
+        background: url("../img/icon-delete-white.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: url("../img/icon-delete.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

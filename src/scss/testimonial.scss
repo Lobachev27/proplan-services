@@ -1,0 +1,99 @@
+@import "partials/params";
+@import "partials/mixins";
+
+/*Два блока на разводящей странице*/
+
+.testimonial{
+  position: relative;
+  padding: 30px 0;
+  @media screen and (min-width: 768px) {
+    padding: 40px 0;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 70px 0;
+  }
+  & .container{
+    @media screen and (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &_item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px 15px;
+    height: 240px;
+    overflow: hidden;
+    @media screen and (min-width: 768px) {
+      height: 200px;
+    }
+    @media screen and (min-width: 992px) {
+      width: calc(50% - 10px);
+      height: 290px;
+      align-items: flex-start;
+      padding: 40px 52px;
+    }
+    &.beige{
+      background-color: $gold;
+      margin-bottom: 20px;
+      @media screen and (min-width: 992px) {
+        margin-bottom: 0;
+      }
+    }
+    &.black{
+      background-color: $black;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      background: url("../img/hexagon-right.png") no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 450px;
+      height: 300px;
+      top: 40px;
+      right: -200px;
+      transform: rotate(180deg);
+      opacity: 0.8;
+      @media screen and (min-width: 768px) {
+        top: 30px;
+        right: -100px;
+      }
+    }
+  }
+  &_caption{
+    font-size: 20px;
+    font-weight: 500;
+    color: $white;
+    text-align: center;
+    z-index: 2;
+    @media screen and (min-width: 768px) {
+      font-size: 22px;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+  &_description{
+    font-size: 16px;
+    color: $white;
+    text-align: center;
+    margin: 10px 0 20px;
+    flex-grow: 2;
+    z-index: 2;
+    @media screen and (min-width: 768px) {
+      max-width: 470px;
+    }
+    @media screen and (min-width: 992px) {
+      text-align: left;
+      max-width: 270px;
+      margin: 20px 0 30px;
+      line-height: 1.4em;
+    }
+  }
+}

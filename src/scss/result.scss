@@ -1,0 +1,132 @@
+@import "partials/params";
+@import "partials/mixins";
+
+#total{
+  position: relative;
+  overflow: hidden;
+  transition: max-height 1.5s ease-out;
+  max-height: 0;
+  &.active{
+    max-height: 6500px;
+    transition: max-height 3s ease-in;
+  }
+}
+
+/*Предполагаемая дата*/
+
+.result{
+  position: relative;
+  background-color: $black;
+  overflow: hidden;
+  display: none;
+  &.active{
+    display: block;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    background: url("../img/hexagon-left.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 900px;
+    height: 600px;
+    top: 300px;
+    left: -400px;
+    transform: rotate(-60deg);
+    @media screen and (min-width: 992px) {
+      top: 220px;
+      left: -430px;
+    }
+  }
+  &:after{
+    display: none;
+    @media screen and (min-width: 768px) {
+      content: "";
+      display: block;
+      position: absolute;
+      background: url("../img/hexagon-right.png") no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 900px;
+      height: 600px;
+      top: 200px;
+      right: -620px;
+      transform: rotate(60deg);
+    }
+    @media screen and (min-width: 992px) {
+      top: 140px;
+      right: -620px;
+    }
+  }
+  & .container{
+    padding-top: 25px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      overflow: hidden;
+    }
+    @media screen and (min-width: 992px) {
+      max-width: 768px;
+      padding-top: 25px;
+      padding-bottom: 50px;
+    }
+    &:before{
+      display: none;
+      @media screen and (min-width: 768px) {
+        content: "";
+        display: block;
+        position: absolute;
+        width: calc(100% - 120px);
+        height: 2px;
+        background-color: $grayDark;
+        top: 104px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @media screen and (min-width: 992px) {
+        width: 100%;
+      }
+    }
+  }
+  &_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    @media screen and (min-width: 768px) {
+      align-items: center;
+    }
+    &-btn{
+      @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  &_value{
+    font-size: 33px;
+    font-weight: 500;
+    text-align: center;
+    color: $white;
+    min-height: 46px;
+    @media screen and (min-width: 400px) {
+      font-size: 40px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 64px;
+      min-height: 73px;
+    }
+  }
+  &_period{
+    font-size: 16px;
+    font-weight: 400;
+    color: #888888;
+    margin-top: 5px;
+  }
+}

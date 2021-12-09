@@ -1,0 +1,17 @@
+<section class="mark">
+  <div class="container">
+    <h2 class="title">@@context.title</h2>
+    <ul class="mark_list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <li class="mark_item">
+        <div class="mark_icon"></div>
+        <div class="mark_caption">`+context.arr[i].caption+`</div>
+        <div class="mark_point">`+context.arr[i].point+`</div>
+      </li>
+      }
+    </ul>
+    <div class="mark_text">@@context.text</div>
+  </div>
+  <div class="advantage_hexagon three"></div>
+  <div class="advantage_hexagon four"></div>
+</section>

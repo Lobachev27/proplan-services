@@ -1,0 +1,25 @@
+@import "partials/params";
+@import "partials/mixins";
+
+/*Нижний блок с кнопками*/
+
+.cellar{
+  & .container{
+    padding-top: 40px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: 992px) {
+      position: static;
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+  }
+}

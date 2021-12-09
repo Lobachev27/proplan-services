@@ -1,0 +1,98 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.join{
+  position: relative;
+  background-color: #0e0e0e;
+  padding: 30px 0;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    padding: 45px 0;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 80px 0;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    background: url("../img/join-left.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    bottom: -20px;
+    left: -30px;
+    @media screen and (min-width: 768px) {
+      width: 150px;
+      height: 150px;
+      bottom: -50px;
+      left: -40px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 210px;
+      height: 210px;
+      top: 50px;
+      left: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+      left: 80px;
+    }
+    @media screen and (min-width: 1600px) {
+      left: 180px;
+    }
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    background: url("../img/join-right.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 90px;
+    height: 90px;
+    top: -20px;
+    right: -30px;
+    @media screen and (min-width: 768px) {
+      width: 170px;
+      height: 170px;
+      top: -30px;
+      right: -40px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 250px;
+      height: 250px;
+      top: 20px;
+      right: 10px;
+    }
+    @media screen and (min-width: 1200px) {
+      right: 50px;
+    }
+    @media screen and (min-width: 1600px) {
+      right: 150px;
+    }
+  }
+  &_caption{
+    font-size: 15px;
+    text-align: center;
+    color: $white;
+    width: 240px;
+    margin: 0 auto 20px;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      width: 490px;
+      margin: 0 auto 35px;
+    }
+  }
+  &_boxBtn{
+    height: 111px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      height: auto;
+      width: 470px;
+      flex-direction: row;
+      margin: 0 auto;
+    }
+  }
+}

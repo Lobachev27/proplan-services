@@ -1,0 +1,158 @@
+@import "partials/params";
+@import "partials/mixins";
+
+/*Сервисы*/
+
+.service{
+  position: relative;
+  margin: 40px 0;
+  @media screen and (min-width: 768px) {
+    margin: 40px 0 60px;
+  }
+  @media screen and (min-width: 992px) {
+    margin: 50px 0 70px;
+  }
+  &_list{
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &_item{
+    position: relative;
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+    transition: 0.5s;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      width: calc(33.33% - 10px);
+    }
+    @media screen and (min-width: 992px) {
+      margin-top: 40px;
+    }
+    &:hover{
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+      transition: 0.5s;
+      & .service_img{
+        transform: translate(-50%, -50%) scale(1.05);
+        transition: 0.5s;
+      }
+      & .btn.btn-service{
+        background-color: $red-hover;
+        transition: 0.5s;
+      }
+    }
+  }
+  &_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: 0.5s;
+    &_wrapper{
+      position: relative;
+      background-color: $white;
+      width: 100%;
+      height: 72vw;
+      line-height: 0;
+      overflow: hidden;
+      @media screen and (min-width: 768px) {
+        height: 25vw;
+        max-height: 250px;
+      }
+    }
+  }
+  &_info{
+    position: relative;
+    background-color: $black;
+    padding: 20px 15px 40px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      flex-grow: 2;
+    }
+  }
+  &_caption{
+    font-size: 24px;
+    font-weight: 500;
+    color: $white;
+    @media screen and (min-width: 768px) {
+      max-width: 180px;
+      height: max-content;
+    }
+  }
+  &_description{
+    font-size: 16px;
+    color: $white;
+    margin: 10px 0 20px;
+    @media screen and (min-width: 768px) {
+      flex-grow: 2;
+    }
+  }
+  &_line{
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    & svg{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &.service_startkit{
+    & .service_item{
+      box-shadow: none;
+      &:nth-child(1),
+      &:nth-child(2){
+        & .service_img{
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+    & .service_img{
+      transform: translate(-50%, -50%) scale(1);
+    }
+    & .service_info{
+      padding-top: 0;
+      @media screen and (min-width: 992px) {
+        padding: 0 25px 40px;
+      }
+    }
+    & .service_number{
+      color: $gold;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+    }
+    & .service_description{
+      font-size: 18px;
+      text-align: center;
+      line-height: 1.3em;
+      margin-bottom: 0;
+      @media screen and (min-width: 768px) {
+        font-size: 15px;
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 18px;
+      }
+      & span{
+        text-transform: uppercase;
+      }
+      & a{
+        color: $white;
+        text-transform: uppercase;
+        text-decoration: underline;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

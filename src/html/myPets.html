@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main main-grey">
+  <section class="pets">
+    <div class="container">
+      <h1 class="computation_title">Мои питомцы</h1>
+      <div class="pets_top">
+        <div class="pets_top_text">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо.</div>
+        <div class="pets_top_box">
+          <a class="btn btn-red btn-petsT" href="petPage.html">Добавить питомца</a>
+          <a class="btn btn-black btn-petsT" href="posterityPage.html">Добавить помет</a>
+        </div>
+      </div>
+      <ul class="pets_list">
+        <li class="pets_item female">
+          <div class="pets_item_main">
+            <div class="pets_item_main_left">
+              <div class="pets_item_main_img_wrapper">
+                <img class="pets_item_main_img" src="https://royal-groom.ru/sites/default/files/breed/bigl.jpg">
+              </div>
+              <div class="pets_item_main_info">
+                <div class="pets_item_main_row">
+                  <div class="pets_item_main_breed">Бигль</div>
+                  <div class="pets_item_main_gender">Сука / Female</div>
+                </div>
+                <div class="pets_item_main_name">Шемсу Сотис Янки герл</div>
+                <div class="pets_item_main_date">Дата рождения: 12.03.2019</div>
+              </div>
+            </div>
+            <div class="pets_item_main_right">
+              <a class="btn btn-black btn-petsB" href="genealogy.html">Подробнее</a>
+            </div>
+          </div>
+          <div class="pets_item_result">
+            <div class="pets_item_result_row">
+              <div class="pets_item_result_count">7 щенков</div>
+              <a class="pets_item_result_plus" href="posterityPage.html"></a>
+              <a class="pets_item_result_more" href="javascript:void(0);"></a>
+            </div>
+            <ul class="pets_item_result_list">
+              <li class="pets_item_result_item">
+                <div class="pets_item_result_item_left">
+                  <div class="pets_item_result_img_wrapper">
+                    <img class="pets_item_result_img" src="https://rutwi.ru/uploads/2019/03/29/13/behagifcd_5c9df15a3898a4.39396791.jpg">
+                  </div>
+                  <div class="pets_item_result_info">
+                    <div class="pets_item_result_date">13.09.2019</div>
+                    <div class="pets_item_result_number">4 щенка</div>
+                    <div class="pets_item_result_request">Заявка отправлена</div>
+                  </div>
+                </div>
+                <div class="pets_item_result_item_right">
+                  <a class="computation_setting" href="posterityPage.html"></a>
+                  <!--<button class="computation_save"></button>-->
+                  <button class="computation_delete" onclick="open_modal('deletePosterity')"></button>
+                </div>
+              </li>
+              <li class="pets_item_result_item">
+                <div class="pets_item_result_item_left">
+                  <div class="pets_item_result_img_wrapper">
+                    <img class="pets_item_result_img" src="https://rutwi.ru/uploads/2019/03/29/13/behagifcd_5c9df15a3898a4.39396791.jpg">
+                  </div>
+                  <div class="pets_item_result_info">
+                    <div class="pets_item_result_date">08.08.2019</div>
+                    <div class="pets_item_result_number">3 щенка</div>
+                  </div>
+                </div>
+                <div class="pets_item_result_item_right">
+                  <a class="computation_setting" href="posterityPage.html"></a>
+                  <!--<button class="computation_save"></button>-->
+                  <button class="computation_delete" onclick="open_modal('deletePosterity')"></button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="pets_item female">
+          <div class="pets_item_main">
+            <div class="pets_item_main_left">
+              <div class="pets_item_main_img_wrapper">
+                <img class="pets_item_main_img" src="https://royal-groom.ru/sites/default/files/breed/bigl.jpg">
+              </div>
+              <div class="pets_item_main_info">
+                <div class="pets_item_main_row">
+                  <div class="pets_item_main_breed">Бигль</div>
+                  <div class="pets_item_main_gender">Сука / Female</div>
+                </div>
+                <div class="pets_item_main_name">Шемсу Сотис Бейлис</div>
+                <div class="pets_item_main_date">Дата рождения: 12.03.2019</div>
+              </div>
+            </div>
+            <div class="pets_item_main_right">
+              <a class="btn btn-black btn-petsB" href="genealogy.html">Подробнее</a>
+            </div>
+          </div>
+          <div class="pets_item_result zero">
+            <div class="pets_item_result_row">
+              <div class="pets_item_result_count">0 щенков</div>
+              <a class="pets_item_result_plus" href="posterityPage.html"></a>
+              <a class="pets_item_result_more" href="javascript:void(0);"></a>
+            </div>
+            <ul class="pets_item_result_list"></ul>
+          </div>
+        </li>
+        <li class="pets_item male">
+          <div class="pets_item_main">
+            <div class="pets_item_main_left">
+              <div class="pets_item_main_img_wrapper">
+                <img class="pets_item_main_img" src="https://royal-groom.ru/sites/default/files/breed/bigl.jpg">
+              </div>
+              <div class="pets_item_main_info">
+                <div class="pets_item_main_row">
+                  <div class="pets_item_main_breed">Бигль</div>
+                  <div class="pets_item_main_gender">Кабель / Male</div>
+                </div>
+                <div class="pets_item_main_name">Шемсу Сотис Янки</div>
+                <div class="pets_item_main_date">Дата рождения: 12.03.2019</div>
+              </div>
+            </div>
+            <div class="pets_item_main_right">
+              <a class="btn btn-black btn-petsB" href="genealogy.html">Подробнее</a>
+            </div>
+          </div>
+          <div class="pets_item_result">
+            <div class="pets_item_result_row">
+              <div class="pets_item_result_count">7 щенков</div>
+              <a class="pets_item_result_plus" href="posterityPage.html"></a>
+              <a class="pets_item_result_more" href="javascript:void(0);"></a>
+            </div>
+            <ul class="pets_item_result_list">
+              <li class="pets_item_result_item">
+                <div class="pets_item_result_item_left">
+                  <div class="pets_item_result_img_wrapper">
+                    <img class="pets_item_result_img" src="https://rutwi.ru/uploads/2019/03/29/13/behagifcd_5c9df15a3898a4.39396791.jpg">
+                  </div>
+                  <div class="pets_item_result_info">
+                    <div class="pets_item_result_date">13.09.2019</div>
+                    <div class="pets_item_result_number">4 щенка</div>
+                    <div class="pets_item_result_request">Заявка отправлена</div>
+                  </div>
+                </div>
+                <div class="pets_item_result_item_right">
+                  <a class="computation_setting" href="posterityPage.html"></a>
+                  <!--<button class="computation_save"></button>-->
+                  <button class="computation_delete" onclick="open_modal('deletePosterity')"></button>
+                </div>
+              </li>
+              <li class="pets_item_result_item">
+                <div class="pets_item_result_item_left">
+                  <div class="pets_item_result_img_wrapper">
+                    <img class="pets_item_result_img" src="https://rutwi.ru/uploads/2019/03/29/13/behagifcd_5c9df15a3898a4.39396791.jpg">
+                  </div>
+                  <div class="pets_item_result_info">
+                    <div class="pets_item_result_date">08.08.2019</div>
+                    <div class="pets_item_result_number">3 щенка</div>
+                  </div>
+                </div>
+                <div class="pets_item_result_item_right">
+                  <a class="computation_setting" href="posterityPage.html"></a>
+                  <!--<button class="computation_save"></button>-->
+                  <button class="computation_delete" onclick="open_modal('deletePosterity')"></button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="pets_item male">
+          <div class="pets_item_main">
+            <div class="pets_item_main_left">
+              <div class="pets_item_main_img_wrapper">
+                <img class="pets_item_main_img" src="https://royal-groom.ru/sites/default/files/breed/bigl.jpg">
+              </div>
+              <div class="pets_item_main_info">
+                <div class="pets_item_main_row">
+                  <div class="pets_item_main_breed">Бигль</div>
+                  <div class="pets_item_main_gender">Кабель / Male</div>
+                </div>
+                <div class="pets_item_main_name">Шемсу Сотис Янки</div>
+                <div class="pets_item_main_date">Дата рождения: 12.03.2019</div>
+              </div>
+            </div>
+            <div class="pets_item_main_right">
+              <a class="btn btn-black btn-petsB" href="genealogy.html">Подробнее</a>
+            </div>
+          </div>
+          <div class="pets_item_result zero">
+            <div class="pets_item_result_row">
+              <div class="pets_item_result_count">0 щенков</div>
+              <a class="pets_item_result_plus" href="posterityPage.html"></a>
+              <a class="pets_item_result_more" href="javascript:void(0);"></a>
+            </div>
+            <ul class="pets_item_result_list"></ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+<div id="deletePosterity" class="modalDialog">
+  <div class="modalDialog_container">
+    <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+    <div class="modalDialog_caption">Вы уверены, что хотите удалить помет?</div>
+    <form id="formDeletePosterity" class="modalDialog_form" onsubmit="return false;">
+      <div class="modalDialog_btnBox">
+        <button class="btn btn-red btn-modal" type="submit">Да, удалить</button>
+        <button class="btn btn-black btn-modal" onclick="close_modal()">Нет, отменить</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="massageModal" class="modalDialog">
+  <div class="modalDialog_container">
+    <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+    <div class="modalDialog_caption">Вы успешно удалили помет</div>
+  </div>
+</div>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>

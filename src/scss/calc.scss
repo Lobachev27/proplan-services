@@ -1,0 +1,150 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.calc{
+  position: relative;
+  background-color: #000;
+  border-top: 4px solid $gold;
+  padding: 30px 0 190px;
+  @media screen and (min-width: 768px) {
+    padding: 60px 0 151px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 70px 0 149px;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    background: url("../img/calc.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 250px;
+    height: 200px;
+    bottom: -7px;
+    left: -15px;
+    @media screen and (min-width: 768px) {
+      width: 400px;
+      height: 320px;
+      bottom: -5px;
+      left: 0;
+    }
+    @media screen and (min-width: 992px) {
+      width: 500px;
+      height: 380px;
+      bottom: 0;
+      left: calc(50% - 500px);
+    }
+  }
+  &_wrapper{
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      @media screen and (min-width: 992px) {
+        margin: 60px auto 0;
+        max-width: 840px;
+      }
+    }
+  }
+  &_item{
+    margin-top: 15px;
+    @media screen and (min-width: 768px) {
+      width: calc(33.33% - 30px);
+      margin-top: 0;
+    }
+  }
+  &_name{
+    font-size: 15px;
+    color: $white;
+    margin-bottom: 10px;
+    @media screen and (min-width: 992px) {
+      font-size: 16px;
+    }
+  }
+  &_input{
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    border: 3px solid $white;
+    outline: none;
+    padding: 0 15px;
+    transition: 0.3s;
+    &:focus{
+      border: 3px solid $gold;
+      transition: 0.3s;
+    }
+  }
+  &_result{
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid $white;
+    background-color: $white;
+    padding: 0 15px;
+  }
+  &_description{
+    color: $white;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+      text-align: left;
+      width: 300px;
+      margin-left: 50%;
+      margin-top: 70px;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 24px;
+      width: 360px;
+      margin-top: 150px;
+    }
+  }
+  &_hexagon{
+    position: absolute;
+    background: url("../img/hexagon-right.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 450px;
+    height: 300px;
+    opacity: 0.8;
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+    @media screen and (min-width: 992px) {
+      width: 900px;
+      height: 600px;
+    }
+    &.one{
+      top: -70px;
+      left: -250px;
+      @media screen and (min-width: 992px) {
+        top: -70px;
+        left: -650px;
+      }
+    }
+    &.two{
+      bottom: 40px;
+      right: -250px;
+      @media screen and (min-width: 992px) {
+        bottom: 140px;
+        right: -590px;
+      }
+    }
+  }
+  & .introGold_line .shape-three{
+    @media screen and (min-width: 768px) {
+      top: -2px;
+    }
+  }
+}

@@ -1,0 +1,471 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.genealogyPet {
+  position: relative;
+  padding: 30px 0;
+  @media screen and (min-width: 768px) {
+    padding: 70px 0;
+  }
+  & .container {
+    max-width: 750px;
+  }
+  &_box {
+    position: relative;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 20px 15px 30px;
+    overflow: hidden;
+    @media screen and (min-width: 768px) {
+      padding: 20px 30px 30px;
+    }
+  }
+  &_top {
+    border-bottom: 1px solid #888888;
+    padding-bottom: 20px;
+  }
+  &_back {
+    position: relative;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 35px;
+    width: max-content;
+    transition: 0.3s;
+    &:hover {
+      color: $red;
+      transition: 0.3s;
+      &:before {
+        background: url("../img/angle-red.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 45%;
+      left: 8px;
+      transform: translateY(-50%) rotate(180deg);
+      width: 14px;
+      height: 14px;
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &_item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  &_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    &_wrapper {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      border-radius: 50%;
+      background-color: $grayDark;
+      overflow: hidden;
+      @media screen and (min-width: 768px) {
+        width: 130px;
+        height: 130px;
+        min-width: 120px;
+      }
+    }
+  }
+  &_info {
+    position: relative;
+    width: calc(100% - 60px);
+    @media screen and (min-width: 768px) {
+      width: calc(100% - 150px);
+      padding-right: 40px;
+    }
+  }
+  &_type {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
+  &_name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  &_row {
+    display: flex;
+    margin-top: 7px;
+    @media screen and (min-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+  &_text {
+    font-size: 12px;
+    margin-right: 3px;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
+  &_gender {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 20px;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+    &.male {
+      &:before {
+        background: url("../img/icon-male.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &.female {
+      &:before {
+        background: url("../img/icon-female.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 45%;
+      left: 2px;
+      transform: translateY(-50%);
+      width: 13px;
+      height: 13px;
+    }
+  }
+  &_breed {
+    font-size: 12px;
+    font-weight: 700;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
+  &_date {
+    font-size: 12px;
+    font-weight: 700;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
+  &_btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 5px;
+    bottom: 0;
+    @media screen and (min-width: 768px) {
+      left: auto;
+      right: 0;
+      top: 0;
+    }
+  }
+  &_achievement {
+    position: relative;
+    margin-top: 25px;
+    &_caption {
+      font-size: 14px;
+      margin-bottom: 12px;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+      }
+    }
+    &_description {
+      font-size: 12px;
+      line-height: 1.2em;
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 1.3em;
+      }
+    }
+  }
+}
+
+.genealogy{
+  position: relative;
+  padding: 30px 0 50px;
+  & .container {
+    max-width: 750px;
+  }
+  &_top{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_caption{
+    font-size: 24px;
+    font-weight: 400;
+  }
+  & .computation_save{
+    margin: 0;
+  }
+  &_container{
+    position: relative;
+    display: flex;
+    width: auto;
+    overflow-x: scroll;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 4px;
+      width: 4px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px #f7f7f7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $red;
+      border-radius: 4px;
+      outline: none;
+      background-clip: border-box;
+      cursor: pointer;
+    }
+  }
+  &_family{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 0 15px;
+    margin: 40px auto 0;
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+  }
+  &_stage{
+    display: flex;
+    margin-bottom: 15px;
+    &_number{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      width: 147px;
+      min-width: 147px;
+      max-width: 147px;
+      margin-left: 4px;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+  &_row{
+    position: relative;
+    display: flex;
+    margin-top: 4px;
+    &:first-of-type{
+      margin-top: 0;
+    }
+  }
+  &_column{
+    margin-left: 4px;
+    &.one{
+      margin-left: 0;
+    }
+  }
+  &_element{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 8px;
+    width: 147px;
+    min-width: 147px;
+    max-width: 147px;
+    min-height: 204px;
+    &.male{
+      & .genealogy_element_info{
+        &:before{
+          background: url("../img/icon-male.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+          width: 23px;
+          height: 23px;
+        }
+      }
+    }
+    &.female{
+      & .genealogy_element_info{
+        &:before{
+          background: url("../img/icon-female.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    &.new{
+      min-height: 100px;
+      & .genealogy_element_info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 7px;
+          transform: translate(0, -50%);
+          z-index: 2;
+        }
+      }
+    }
+    &.hidden{
+      display: none;
+    }
+    &:hover{
+      & .genealogy_element_delete{
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+    &_info{
+      position: relative;
+      width: 100%;
+      /*&:hover{
+        & .genealogy_element_breed{
+          color: $red;
+          transition: 0.3s;
+        }
+        & .genealogy_element_name{
+          color: $red;
+          transition: 0.3s;
+        }
+      }*/
+      &:before{
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+    }
+    &_breed{
+      font-size: 12px;
+      line-height: 1.1em;
+      text-align: center;
+      transition: 0.3s;
+    }
+    &_name{
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 3px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    &_link{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      cursor: default;
+    }
+    &_delete{
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $white;
+      border: 1px solid $red;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      transition: opacity 0.5s ease-in;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      &:hover{
+        background-color: $red-hover;
+        border: 1px solid $red-hover;
+        transition: 0.3s;
+        &:before{
+          background: url("../img/icon-delete-white.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        background: url("../img/icon-delete.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &_plus{
+      position: relative;
+      width: 36px;
+      height: 36px;
+      background-color: $white;
+      border: 1px solid $red;
+      border-radius: 50%;
+      outline: none;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover{
+        background-color: $red-hover;
+        border: 1px solid $red-hover;
+        transition: 0.3s;
+        &:before{
+          background: url("../img/icon-plus-white.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: 0.3s;
+        }
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        background: url("../img/icon-plus-red.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s;
+      }
+    }
+  }
+}

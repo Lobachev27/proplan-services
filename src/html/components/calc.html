@@ -1,0 +1,31 @@
+<section class="calc">
+  <div class="container">
+    <h2 class="title title-white">@@context.title</h2>
+    <div class="calc_wrapper">
+      @@for (var i = 0; i < 2; i++) {
+      <div class="calc_item">
+        <div class="calc_name"><br>`+context.arr[i].input+`</div>
+        <input class="calc_input" type="number" min="1" step="1">
+      </div>
+      }
+      @@for (var i = 2; i < context.arr.length; i++) {
+      <div class="calc_item">
+        <div class="calc_name">`+context.arr[i].input+`</div>
+        <div id="calc_result" class="calc_result"></div>
+      </div>
+      }
+    </div>
+    <div class="calc_description">@@context.description</div>
+  </div>
+  <div class="introGold_line">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="shape-two" viewBox="0 0 1000 85" preserveAspectRatio="none">
+      <polygon fill="#fff" class="ls-triangle-section_left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+      <polygon fill="#fff" class="ls-triangle-section_right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="shape-three" viewBox="0 0 1200 125" preserveAspectRatio="none">
+      <path id="Combined_Shape" data-name="Combined Shape" d="M600,97,1200,0V4L600,125ZM0,4V0L600,97v28Z" fill="#d7bb77"/>
+    </svg>
+  </div>
+  <div class="calc_hexagon one"></div>
+  <div class="calc_hexagon two"></div>
+</section>

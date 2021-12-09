@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="shape" viewBox="0 0 1000 85" preserveAspectRatio="none">
+    <!--<path fill="#fff" fill-rule="evenodd" class="shape__path" d="M-0.000,0.000 C237.649,56.567 628.986,150.000 720.000,150.000 C808.704,150.000 1175.094,61.648 1440.000,0.000 C1440.000,50.333 1440.000,103.667 1440.000,154.000 L-0.000,154.000 L-0.000,0.000 Z"></path>-->
+    <polygon fill="#fff" class="ls-triangle-section_left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+    <polygon fill="#fff" class="ls-triangle-section_right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+</svg>

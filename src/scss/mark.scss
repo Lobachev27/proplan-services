@@ -1,0 +1,114 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.mark{
+  position: relative;
+  padding: 30px 0;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    padding: 50px 0;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 80px 0;
+  }
+  &_list{
+    position: relative;
+    list-style: none;
+    margin-top: 30px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 40px auto 0;
+      max-width: 820px;
+    }
+  }
+  &_item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    height: 270px;
+    border-radius: 10px;
+    margin-top: 15px;
+    @media screen and (min-width: 768px) {
+      width: calc(33.33% - 25px);
+      height: 250px;
+    }
+    &:nth-child(1){
+      .mark_icon{
+        background: url("../img/reco-5.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &:nth-child(2){
+      .mark_icon{
+        background: url("../img/reco-6.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &:nth-child(3){
+      .mark_icon{
+        background: url("../img/reco-7.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+  &_icon{
+    width: 65px;
+    height: 65px;
+  }
+  &_caption{
+    font-size: 16px;
+    text-align: center;
+    min-height: 54px;
+    max-width: 190px;
+    margin: 35px 0 20px;
+    @media screen and (min-width: 768px) {
+      margin: 20px 0;
+    }
+  }
+  &_point{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $gold
+  }
+  &_text{
+    font-size: 12px;
+    line-height: 1.3em;
+    margin-top: 20px;
+    @media screen and (min-width: 768px) {
+      max-width: 520px;
+      text-align: center;
+      margin: 30px auto 0;
+    }
+    @media screen and (min-width: 992px) {
+      max-width: 820px;
+    }
+  }
+  & .advantage_hexagon{
+    display: none;
+    &.three{
+      @media screen and (min-width: 992px) {
+        display: block;
+        transform: scale(1, -1);
+        top: -250px;
+        z-index: -2;
+      }
+    }
+    &.four{
+      @media screen and (min-width: 992px) {
+        display: block;
+        transform: scale(1, -1);
+        top: -250px;
+        z-index: -2;
+      }
+    }
+  }
+}

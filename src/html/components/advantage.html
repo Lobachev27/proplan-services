@@ -1,0 +1,17 @@
+<section class="advantage @@context.class">
+  <div class="container">
+    <h2 class="title title-white title-advantage">@@context.title</h2>
+    <ul class="advantage_list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <li class="advantage_item">
+        <div class="advantage_img `+context.arr[i].number+`"></div>
+        <div class="advantage_name">`+context.arr[i].name+`</div>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="advantage_hexagon one"></div>
+  <div class="advantage_hexagon two"></div>
+  <div class="advantage_hexagon three"></div>
+  <div class="advantage_hexagon four"></div>
+</section>

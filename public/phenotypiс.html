@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css"
+    />
+    <link rel="stylesheet" href="./css/print.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="header_top">
+        <div class="header_purina">
+          <a class="header_purina_link" href="https://www.purina.ru/">
+            <img
+              class="header_purina_img"
+              src="./img/logo.svg"
+              alt="Purina"
+              title="Purina"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container">
+          <div class="header_logo">
+            <a class="header_logo_link" href="https://www.proplan.ru/">
+              <img
+                class="header_logo_img"
+                src="./img/logo-header.png"
+                alt="Purina Pro Plan"
+                title="Purina Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="header_box">
+            <nav class="header_nav">
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="calendarPregnancy.html"
+                  >Календарь беременности</a
+                >
+              </div>
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="phenotypiс.html"
+                  >Генетический калькулятор окрасов</a
+                >
+              </div>
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="myPets.html"
+                  >Родословная питомца</a
+                >
+              </div>
+            </nav>
+          </div>
+          <div class="header_hamburger"></div>
+        </div>
+      </div>
+    </header>
+    <div class="header_mobile">
+      <div class="container">
+        <nav class="header_nav mobile">
+          <div class="header_nav_item scroll">
+            <a class="header_nav_link" href="#food">Кормление</a>
+          </div>
+          <div class="header_nav_item scroll">
+            <a class="header_nav_link" href="#article">Забота</a>
+          </div>
+          <div class="header_nav_item">
+            <a
+              class="header_nav_link"
+              href="https://www.proplan.ru/dog/?range%5B791%5D=791"
+              target="_blank"
+              >Линейка Pro Plan<sup>®</sup> для щенят</a
+            >
+          </div>
+          <div class="header_nav_item social">
+            <div class="header_social_text">Поделиться</div>
+            <a
+              class="header_social_item facebook"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <a
+              class="header_social_item vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <main id="main" class="main">
+      <section class="introPhenotypic">
+        <div class="container">
+          <h1 class="title title-white title-main">
+            Генетический калькулятор окрасов
+          </h1>
+          <div class="intro_description">
+            Есть много вариантов Lorem Ipsum, но большинство из них имеет не
+            всегда приемлемые модификации.
+          </div>
+        </div>
+        <div class="intro_line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="shape"
+            viewBox="0 0 1000 85"
+            preserveAspectRatio="none"
+          >
+            <polygon
+              fill="#fff"
+              class="ls-triangle-section_left"
+              points="0,0   0,86   500.8,86   500.8,75.5"
+            ></polygon>
+            <polygon
+              fill="#fff"
+              class="ls-triangle-section_right"
+              points="1000,0   1000,86   500,86   500,75.5"
+            ></polygon>
+          </svg>
+        </div>
+      </section>
+      <form class="formPhenotypic" onsubmit="return false;" autocomplete="off">
+        <div
+          class="formPhenotypic_cat male js-form-module js-form-module-male"
+          data-value="male"
+        >
+          <div class="formPhenotypic_top">
+            <div class="container">
+              <div class="formPhenotypic_top_wrapper">
+                <div class="formPhenotypic_gender">Отец</div>
+                <div class="formPhenotypic_text">Фенотип кота</div>
+                <input id="codeMale" class="formPhenotypic_code js-text-code" />
+                <div id="moreMale" class="formPhenotypic_more active"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="formPhenotypic_bottom">
+            <div class="formPhenotypic_select_list active">
+              <div class="container">
+                <div class="formPhenotypic_select_item breedCat">
+                  <div class="formPhenotypic_name">Порода</div>
+                  <select class="js-phen-select" name="breed">
+                    <option value="hide">---</option>
+                    <option value="ABY">Абиссинская</option>
+                    <option value="AUM">Австралийская дымчатая</option>
+                    <option value="ASI">Азиатская</option>
+                    <option value="AWH">Американская жесткошерстная</option>
+                    <option value="ASH">Американская короткошерстная</option>
+                    <option value="ABT">Американский бобтейл</option>
+                    <option value="ACS">Американский кёрл</option>
+                    <option value="ACL">
+                      Американский кёрл длинношёрстный
+                    </option>
+                    <option value="ANA">Анатолийская</option>
+                    <option value="ARM">Аравийская мау</option>
+                    <option value="BAL">Балинезийская</option>
+                    <option value="BEN">Бенгальская</option>
+                    <option value="SMI">Бирманская</option>
+                    <option value="BOM">Бомбейская</option>
+                    <option value="BRA">Бразильская короткошёрстная</option>
+                    <option value="BLH">Британская длинношёрствная</option>
+                    <option value="BRI">Британская короткошёрскная</option>
+                    <option value="BUR">Бурмезская</option>
+                    <option value="BMI">Бурмилла</option>
+                    <option value="HVB">Гавана браун</option>
+                    <option value="GRX">Герман рекс</option>
+                    <option value="DRX">Девон-рекс</option>
+                    <option value="HHP">Домашняя кошка</option>
+                    <option value="DSX">Донской сфинкс</option>
+                    <option value="EUR">Европейская короткошёрстная</option>
+                    <option value="MAU">Египетская Мау</option>
+                    <option value="YOR">Йоркская</option>
+                    <option value="CSP">Калифорнийская сияющая</option>
+                    <option value="KAN">Канаани</option>
+                    <option value="SPH">Канадский сфинкс</option>
+                    <option value="KAB">Карельский бобтейл</option>
+                    <option value="KAS">
+                      Карельский бобтейл короткошёрстный
+                    </option>
+                    <option value="CYM">Кимрик</option>
+                    <option value="CRX">Корниш-рекс</option>
+                    <option value="KOR">Корэт</option>
+                    <option value="KBL">
+                      Курильсикй бобтейл длинношёрствный
+                    </option>
+                    <option value="KBS">
+                      Курильский бобтейл короткошёрстный
+                    </option>
+                    <option value="LPL">Ла Перм длинношёрстная</option>
+                    <option value="MNL">Манчкин длинношёрствный</option>
+                    <option value="MNS">Манчкин короткошёрстный</option>
+                    <option value="MCO">Мейн-Кун</option>
+                    <option value="MBT">Меконгский бобтейл</option>
+                    <option value="MAN">Мэнкс</option>
+                    <option value="NEV">Невская маскарадная</option>
+                    <option value="NON">Незаригестрированная порода</option>
+                    <option value="NEB">Нибелунг</option>
+                    <option value="NFO">Норвежская лесная</option>
+                    <option value="OKH">Ориентальная короткошёрстная</option>
+                    <option value="OSL">
+                      Ориентальная полудлинношерствная
+                    </option>
+                    <option value="OCI">Оцикэт</option>
+                    <option value="PER">Персидская</option>
+                    <option value="PBD">Петерболд</option>
+                    <option value="RGM">Рагамаффин</option>
+                    <option value="RUS">Русская голубая</option>
+                    <option value="RAG">Рэгдолл</option>
+                    <option value="SYL">Сейшельская длинношерстная</option>
+                    <option value="SYS">Сейшельская короткошерстная</option>
+                    <option value="SRX">Селкирк-рекс</option>
+                    <option value="SRS">Селкирк рекс короткошёрстный</option>
+                    <option value="SIA">Сиамская</option>
+                    <option value="SIB">Сибирская</option>
+                    <option value="SIN">Сингапурская</option>
+                    <option value="SFL">Скоттиш-фолд ДШ (Хайленд фолд)</option>
+                    <option value="SFS">
+                      Скоттиш-фолд (Шотландская вислоухая)
+                    </option>
+                    <option value="SNO">Сноу-шу</option>
+                    <option value="SOK">Сококе</option>
+                    <option value="SOM">Сомалийская</option>
+                    <option value="THA">Тайская</option>
+                    <option value="TBT">Тайский бобтейл</option>
+                    <option value="TIF">Тиффани</option>
+                    <option value="TON">Тонкинская</option>
+                    <option value="TUA">Турецкая ангора</option>
+                    <option value="TUV">Турецкая ван</option>
+                    <option value="URL">Уральский рекс длинношерстный</option>
+                    <option value="URX">Уральский рекс короткошерстный</option>
+                    <option value="CEY">Цейлонская</option>
+                    <option value="CHA">Шартрез</option>
+                    <option value="EXO">Экзотическая короткошерская</option>
+                    <option value="JAV">Яванская (яванез)</option>
+                    <option value="JBT">Японский бобтейл</option>
+                    <option value="JBL">
+                      Японский бобтейл длинношёрствный
+                    </option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Основной окрас</div>
+                  <select class="js-phen-select" name="color">
+                    <option value="hide">---</option>
+                    <option value="w">Белый</option>
+                    <option value="d">Красный</option>
+                    <option value="e">Кремовый</option>
+                    <option value="n">Чёрный</option>
+                    <option value="a">Голубой</option>
+                    <option value="b">Шоколадный</option>
+                    <option value="c">Лиловый</option>
+                    <option value="o">Циннамон</option>
+                    <option value="p">Фавн</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Наличие белых пятен</div>
+                  <select class="js-phen-select" name="white">
+                    <option value="hide">---</option>
+                    <option value="no spots">Сплошной окрас</option>
+                    <option value="01">Ван</option>
+                    <option value="02">Арлекин</option>
+                    <option value="03">Биколор</option>
+                    <option value="04">Миттед</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Рисунок окраса</div>
+                  <select class="js-phen-select" name="image">
+                    <option value="hide">---</option>
+                    <option value="no drawing">Сплошной окрас</option>
+                    <option value="22">Мраморный</option>
+                    <option value="23">Тигровый</option>
+                    <option value="25">Тикированный</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Наличие серебра</div>
+                  <select class="js-phen-select" name="silver">
+                    <option value="hide">---</option>
+                    <option value="no silver">Без серебра</option>
+                    <option value="s">Серебристый, дымчатый</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Наличие поинтов</div>
+                  <select class="js-phen-select" name="points">
+                    <option value="hide">---</option>
+                    <option value="no points">Без поинтов</option>
+                    <option value="31">Бурманский</option>
+                    <option value="32">Тонкинский</option>
+                    <option value="33">Сиамский</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="formPhenotypic_genotype">
+              <div class="container">
+                <div class="formPhenotypic_name">Генотип кота</div>
+              </div>
+              <div class="formPhenotypic_genotype_list">
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">1</option>
+                    <option value="A">A</option>
+                    <option value="a">a</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">2</option>
+                    <option value="A">A</option>
+                    <option value="a">a</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">3</option>
+                    <option value="B">B</option>
+                    <option value="b">b</option>
+                    <option value="b'">b'</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">4</option>
+                    <option value="B">B</option>
+                    <option value="b">b</option>
+                    <option value="b'">b'</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">5</option>
+                    <option value="C">C</option>
+                    <option value="cb">cb</option>
+                    <option value="cs">cs</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">6</option>
+                    <option value="C">C</option>
+                    <option value="cb">cb</option>
+                    <option value="cs">cs</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">7</option>
+                    <option value="D">D</option>
+                    <option value="d">d</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">8</option>
+                    <option value="D">D</option>
+                    <option value="d">d</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">9</option>
+                    <option value="I">I</option>
+                    <option value="i">i</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">10</option>
+                    <option value="I">I</option>
+                    <option value="i">i</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">11</option>
+                    <option value="O">O</option>
+                    <option value="o">o</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">12</option>
+                    <option value="Y">Y</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">13</option>
+                    <option value="Ta">Ta</option>
+                    s
+                    <option value="T">T</option>
+                    <option value="tb">tb</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">14</option>
+                    <option value="Ta">Ta</option>
+                    <option value="T">T</option>
+                    <option value="tb">tb</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">15</option>
+                    <option value="W">W</option>
+                    <option value="Ws">Ws</option>
+                    <option value="w">w</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">16</option>
+                    <option value="W">W</option>
+                    <option value="Ws">Ws</option>
+                    <option value="w">w</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="formPhenotypic_hexagon">
+              <div class="calc_hexagon one"></div>
+              <div class="calc_hexagon two"></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="formPhenotypic_cat female js-form-module js-form-module-female"
+          data-value="female"
+        >
+          <div class="formPhenotypic_top">
+            <div class="container">
+              <div class="formPhenotypic_top_wrapper">
+                <div class="formPhenotypic_gender">Мать</div>
+                <div class="formPhenotypic_text">Фенотип кошки</div>
+                <input class="formPhenotypic_code js-text-code" />
+                <div id="moreFemale" class="formPhenotypic_more active"></div>
+              </div>
+            </div>
+          </div>
+          <div class="formPhenotypic_bottom">
+            <div class="formPhenotypic_select_list active">
+              <div class="container">
+                <div class="formPhenotypic_select_item breedCat">
+                  <div class="formPhenotypic_name">Порода</div>
+                  <select class="js-phen-select" name="breed">
+                    <option value="hide">---</option>
+                    <option value="ABY">Абиссинская</option>
+                    <option value="AUM">Австралийская дымчатая</option>
+                    <option value="ASI">Азиатская</option>
+                    <option value="AWH">Американская жесткошерстная</option>
+                    <option value="ASH">Американская короткошерстная</option>
+                    <option value="ABT">Американский бобтейл</option>
+                    <option value="ACS">Американский кёрл</option>
+                    <option value="ACL">
+                      Американский кёрл длинношёрстный
+                    </option>
+                    <option value="ANA">Анатолийская</option>
+                    <option value="ARM">Аравийская мау</option>
+                    <option value="BAL">Балинезийская</option>
+                    <option value="BEN">Бенгальская</option>
+                    <option value="SMI">Бирманская</option>
+                    <option value="BOM">Бомбейская</option>
+                    <option value="BRA">Бразильская короткошёрстная</option>
+                    <option value="BLH">Британская длинношёрствная</option>
+                    <option value="BRI">Британская короткошёрскная</option>
+                    <option value="BUR">Бурмезская</option>
+                    <option value="BMI">Бурмилла</option>
+                    <option value="HVB">Гавана браун</option>
+                    <option value="GRX">Герман рекс</option>
+                    <option value="DRX">Девон-рекс</option>
+                    <option value="HHP">Домашняя кошка</option>
+                    <option value="DSX">Донской сфинкс</option>
+                    <option value="EUR">Европейская короткошёрстная</option>
+                    <option value="MAU">Египетская Мау</option>
+                    <option value="YOR">Йоркская</option>
+                    <option value="CSP">Калифорнийская сияющая</option>
+                    <option value="KAN">Канаани</option>
+                    <option value="SPH">Канадский сфинкс</option>
+                    <option value="KAB">Карельский бобтейл</option>
+                    <option value="KAS">
+                      Карельский бобтейл короткошёрстный
+                    </option>
+                    <option value="CYM">Кимрик</option>
+                    <option value="CRX">Корниш-рекс</option>
+                    <option value="KOR">Корэт</option>
+                    <option value="KBL">
+                      Курильсикй бобтейл длинношёрствный
+                    </option>
+                    <option value="KBS">
+                      Курильский бобтейл короткошёрстный
+                    </option>
+                    <option value="LPL">Ла Перм длинношёрстная</option>
+                    <option value="MNL">Манчкин длинношёрствный</option>
+                    <option value="MNS">Манчкин короткошёрстный</option>
+                    <option value="MCO">Мейн-Кун</option>
+                    <option value="MBT">Меконгский бобтейл</option>
+                    <option value="MAN">Мэнкс</option>
+                    <option value="NEV">Невская маскарадная</option>
+                    <option value="NON">Незаригестрированная порода</option>
+                    <option value="NEB">Нибелунг</option>
+                    <option value="NFO">Норвежская лесная</option>
+                    <option value="OKH">Ориентальная короткошёрстная</option>
+                    <option value="OSL">
+                      Ориентальная полудлинношерствная
+                    </option>
+                    <option value="OCI">Оцикэт</option>
+                    <option value="PER">Персидская</option>
+                    <option value="PBD">Петерболд</option>
+                    <option value="RGM">Рагамаффин</option>
+                    <option value="RUS">Русская голубая</option>
+                    <option value="RAG">Рэгдолл</option>
+                    <option value="SYL">Сейшельская длинношерстная</option>
+                    <option value="SYS">Сейшельская короткошерстная</option>
+                    <option value="SRX">Селкирк-рекс</option>
+                    <option value="SRS">Селкирк рекс короткошёрстный</option>
+                    <option value="SIA">Сиамская</option>
+                    <option value="SIB">Сибирская</option>
+                    <option value="SIN">Сингапурская</option>
+                    <option value="SFL">Скоттиш-фолд ДШ (Хайленд фолд)</option>
+                    <option value="SFS">
+                      Скоттиш-фолд (Шотландская вислоухая)
+                    </option>
+                    <option value="SNO">Сноу-шу</option>
+                    <option value="SOK">Сококе</option>
+                    <option value="SOM">Сомалийская</option>
+                    <option value="THA">Тайская</option>
+                    <option value="TBT">Тайский бобтейл</option>
+                    <option value="TIF">Тиффани</option>
+                    <option value="TON">Тонкинская</option>
+                    <option value="TUA">Турецкая ангора</option>
+                    <option value="TUV">Турецкая ван</option>
+                    <option value="URL">Уральский рекс длинношерстный</option>
+                    <option value="URX">Уральский рекс короткошерстный</option>
+                    <option value="CEY">Цейлонская</option>
+                    <option value="CHA">Шартрез</option>
+                    <option value="EXO">Экзотическая короткошерская</option>
+                    <option value="JAV">Яванская (яванез)</option>
+                    <option value="JBT">Японский бобтейл</option>
+                    <option value="JBL">
+                      Японский бобтейл длинношёрствный
+                    </option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Основной окрас</div>
+                  <select class="js-phen-select" name="color">
+                    <option value="hide">---</option>
+                    <option value="w">Белый</option>
+                    <option value="d">Красный</option>
+                    <option value="e">Кремовый</option>
+                    <option value="n">Чёрный</option>
+                    <option value="a">Голубой</option>
+                    <option value="b">Шоколадный</option>
+                    <option value="c">Лиловый</option>
+                    <option value="o">Циннамон</option>
+                    <option value="p">Фавн</option>
+                    <option value="f">Чёрная черепаха</option>
+                    <option value="g">Голубая черепаха</option>
+                    <option value="h">Шоколадная черепаха</option>
+                    <option value="j">Лиловая черепаха</option>
+                    <option value="q">Циннамоновая черепаха</option>
+                    <option value="r">Фавн черепаха</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Наличие белых пятен</div>
+                  <select class="js-phen-select" name="white">
+                    <option value="hide">---</option>
+                    <option value="no spots">Сплошной окрас</option>
+                    <option value="01">Ван</option>
+                    <option value="02">Арлекин</option>
+                    <option value="03">Биколор</option>
+                    <option value="04">Миттед</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Рисунок окраса</div>
+                  <select class="js-phen-select" name="image">
+                    <option value="hide">---</option>
+                    <option value="no drawing">Сплошной окрас</option>
+                    <option value="22">Мраморный</option>
+                    <option value="23">Тигровый</option>
+                    <option value="25">Тикированный</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Наличие серебра</div>
+                  <select class="js-phen-select" name="silver">
+                    <option value="hide">---</option>
+                    <option value="no silver">Без серебра</option>
+                    <option value="s">Серебристый, дымчатый</option>
+                  </select>
+                </div>
+
+                <div class="formPhenotypic_select_item">
+                  <div class="formPhenotypic_name">Наличие поинтов</div>
+                  <select class="js-phen-select" name="points">
+                    <option value="hide">---</option>
+                    <option value="no points">Без поинтов</option>
+                    <option value="31">Бурманский</option>
+                    <option value="32">Тонкинский</option>
+                    <option value="33">Сиамский</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="formPhenotypic_genotype">
+              <div class="container">
+                <div class="formPhenotypic_name">Генотип кошки</div>
+              </div>
+              <div class="formPhenotypic_genotype_list">
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">1</option>
+                    <option value="A">A</option>
+                    <option value="a">a</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">2</option>
+                    <option value="A">A</option>
+                    <option value="a">a</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">3</option>
+                    <option value="B">B</option>
+                    <option value="b">b</option>
+                    <option value="b'">b'</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">4</option>
+                    <option value="B">B</option>
+                    <option value="b">b</option>
+                    <option value="b'">b'</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">5</option>
+                    <option value="C">C</option>
+                    <option value="cb">cb</option>
+                    <option value="cs">cs</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">6</option>
+                    <option value="C">C</option>
+                    <option value="cb">cb</option>
+                    <option value="cs">cs</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">7</option>
+                    <option value="D">D</option>
+                    <option value="d">d</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">8</option>
+                    <option value="D">D</option>
+                    <option value="d">d</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">9</option>
+                    <option value="I">I</option>
+                    <option value="i">i</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">10</option>
+                    <option value="I">I</option>
+                    <option value="i">i</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">11</option>
+                    <option value="O">O</option>
+                    <option value="o">o</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">12</option>
+                    <option value="O">O</option>
+                    <option value="o">o</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">13</option>
+                    <option value="Ta">Ta</option>
+                    <option value="T">T</option>
+                    <option value="tb">tb</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">14</option>
+                    <option value="Ta">Ta</option>
+                    <option value="T">T</option>
+                    <option value="tb">tb</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">15</option>
+                    <option value="W">W</option>
+                    <option value="Ws">Ws</option>
+                    <option value="w">w</option>
+                  </select>
+                </div>
+                <div class="formPhenotypic_genotype_item">
+                  <select class="js-gen-select">
+                    <option value="hide">16</option>
+                    <option value="W">W</option>
+                    <option value="Ws">Ws</option>
+                    <option value="w">w</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="formPhenotypic_hexagon">
+              <div class="calc_hexagon one"></div>
+              <div class="calc_hexagon two"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="formPhenotypic_boxBtn">
+            <button
+              class="btn btn-red btn-phenotypic js-calculate-btn"
+              type="submit"
+              disabled
+            >
+              Рассчитать цвет потомства
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <section id="chancesArea" class="resultPhenotypic">
+        <div class="container">
+          <h2 class="resultPhenotypic_title">Возможные окрасы</h2>
+          <div id="chancesContainer" class="resultPhenotypic_wrapper"></div>
+        </div>
+        <div class="cellar">
+          <div class="container">
+            <a
+              class="btn btn-red btn-phenotypic"
+              href="javascript:void(0);"
+              onclick="open_modal('saveCalendar')"
+              >Сохранить в профиле</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!--<section class="resultPhenotypic">
+    <div class="container">
+      <h2 class="resultPhenotypic_title">Возможные окрасы</h2>
+      <div class="resultPhenotypic_wrapper">
+        <div class="resultPhenotypic_box">
+          <div class="resultPhenotypic_caption">Основной окрас</div>
+          <ul class="resultPhenotypic_list">
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="w">Белый</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="d">Красный</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="e">Кремовый</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="n">Чёрный</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="a">Голубой</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="b">Шоколадный</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="c">Лиловый</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="o">Циннамон</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="p">Фавн</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="f">Чёрная черепаха</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="g">Голубая черепаха</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="h">Шоколадная черепаха</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="j">Лиловая черепаха</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="q">Циннамоновая черепаха</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item base">
+              <div class="resultPhenotypic_name" data-value="r">Фавн черепаха</div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Коты</div>
+                <div class="resultPhenotypic_value">50.21%</div>
+              </div>
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_gender">Кошки</div>
+                <div class="resultPhenotypic_value">49.79%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="resultPhenotypic_box">
+          <div class="resultPhenotypic_caption">Рисунок окраса</div>
+          <ul class="resultPhenotypic_list">
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="none">Сплошной окрас</div>
+                <div class="resultPhenotypic_value">100%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="22">Мраморный</div>
+                <div class="resultPhenotypic_value">79.23%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="23">Тигровый</div>
+                <div class="resultPhenotypic_value">49.23%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="25">Тикированный</div>
+                <div class="resultPhenotypic_value">19.23%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="resultPhenotypic_box">
+          <div class="resultPhenotypic_caption">Серебро в окрасе</div>
+          <ul class="resultPhenotypic_list">
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="none">Без серебра</div>
+                <div class="resultPhenotypic_value">100%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="s">Серебристый, дымчатый</div>
+                <div class="resultPhenotypic_value">56.93%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="resultPhenotypic_box">
+          <div class="resultPhenotypic_caption">Белые пятна в окрасе</div>
+          <ul class="resultPhenotypic_list">
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="none">Сплошной окрас</div>
+                <div class="resultPhenotypic_value">100%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="01">Ван</div>
+                <div class="resultPhenotypic_value">80.93%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="02">Арлекин</div>
+                <div class="resultPhenotypic_value">60.97%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="03">Биколор</div>
+                <div class="resultPhenotypic_value">40.42%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="04">Миттед</div>
+                <div class="resultPhenotypic_value">4.75%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="resultPhenotypic_box">
+          <div class="resultPhenotypic_caption">Поинтовый окрас</div>
+          <ul class="resultPhenotypic_list">
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="none">Сплошной окрас</div>
+                <div class="resultPhenotypic_value">100%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="31">Бурманский</div>
+                <div class="resultPhenotypic_value">70.21%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="32">Тонкинский</div>
+                <div class="resultPhenotypic_value">40.64%</div>
+              </div>
+            </li>
+            <li class="resultPhenotypic_item">
+              <div class="resultPhenotypic_row">
+                <div class="resultPhenotypic_name" data-value="33">Сиамский</div>
+                <div class="resultPhenotypic_value">1.84%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>-->
+    </main>
+    <div id="saveCalendar" class="modalDialog">
+      <div class="modalDialog_container">
+        <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+        <div class="modalDialog_caption">Введите название расчетов</div>
+        <form
+          id="formSaveCalendar"
+          class="modalDialog_form"
+          onsubmit="return false;"
+        >
+          <input
+            class="modalDialog_input"
+            name="name"
+            type="text"
+            autocomplete="off"
+            placeholder="Введите название"
+            required
+          />
+          <div class="modalDialog_btnBox">
+            <button class="btn btn-red btn-modal" type="submit">
+              Сохранить
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="massageModal" class="modalDialog">
+      <div class="modalDialog_container">
+        <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+        <div class="modalDialog_caption">Расчеты успешно сохранены</div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_top">
+          <div class="footer_logo">
+            <a
+              class="footer_logo_link"
+              href="https://www.proplan.ru/"
+              target="_blank"
+            >
+              <img
+                class="footer_logo_img"
+                src="./img/logo-footer.png"
+                alt="Purina Pro Plan"
+                title="Purina Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="footer_social">
+            <a
+              class="footer_social_item facebook"
+              data-id="fb"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <a
+              class="footer_social_item vk"
+              data-id="vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <nav class="footer_nav">
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/privacy_policy.pdf"
+                target="_blank"
+                >Политика Конфиденциальности</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/legal/"
+                target="_blank"
+                >Правовая информация</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/purina/proplan/frequently-asked-questions/"
+                target="_blank"
+                >Часто задаваемые вопросы</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/vet/"
+                target="_blank"
+                >Клуб ветеринарных специалистов</a
+              >
+            </div>
+          </nav>
+          <div class="footer_text">
+            Purina 2020 ® Владелец товарных знаков: Société des Produits Nestlé
+            S.A.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

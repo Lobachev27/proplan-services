@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(11.000000, 12.000000)">
+            <circle id="Oval" fill="#FFFFFF" cx="15.5471951" cy="6.75108826" r="1"></circle>
+            <path d="M14.4464478,12.3327086 L14.4464478,16.7322209 L3.49506851,16.7322209 L3.49506851,12.3327086 L-0.785651686,12.3327086 L-0.785651686,5.64157622 C-0.785651686,4.53700672 0.109778814,3.64157622 1.21434831,3.64157622 L16.7579949,3.64157622 C17.8625644,3.64157622 18.7579949,4.53700672 18.7579949,5.64157622 L18.7579949,12.3327086 L14.4464478,12.3327086 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="2"></path>
+            <rect id="Rectangle" stroke="#FFFFFF" stroke-width="2" x="3.49506851" y="-0.743201869" width="10.9513793" height="4.37956967"></rect>
+            <rect id="Rectangle-Copy-25" stroke="#FFFFFF" stroke-width="2" x="3.49506851" y="10.1806957" width="10.9513793" height="6.54138153"></rect>
+        </g>
+    </g>
+</svg>

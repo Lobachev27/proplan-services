@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main">
+
+  @@include("./components/introGold-spreading.html", {
+    context: {
+      "title": "Что такое Клуб Заводчиков Purina<sup>®</sup> PRO PLAN<sup>®</sup>?\n",
+      "description": "Клуб Заводчиков Purina<sup>®</sup> PRO PLAN<sup>®</sup> предоставляет возможность пользоваться специальными инструментами и предложениями, созданными для заводчиков.\n",
+      "link": "https://www.proplan.ru/breeders/reco",
+    }
+  })
+
+  @@include("./components/advantage.html", {
+    context: {
+      "class": "",
+      "title": "Преимущества клуба",
+      arr: [
+        {"number": "one", "name": "Специальная цена на покупку корма PRO PLAN<sup>®</sup>"},
+        {"number": "two", "name": "Бесплатные start-киты для ваших покупателей"},
+        {"number": "three", "name": "Получайте бонусы и баллы за рекомендации и свои покупки"},
+        {"number": "four", "name": "Уникальные сервисы, разработанные специально для заводчиков"},
+        {"number": "five", "name": "Актуальная и полезная информация о выставках и разведении<br> питомцев"},
+      ]
+    }
+  })
+
+  @@include("./components/testimonial.html", {
+    context: {
+      arr: [
+        {"class": "beige", "caption": "Starter Kits для питомцев", "description": "Специальные бесплатные наборы для ваших покупателей. Только для членов Клуба Заводчиков Purina<sup>®</sup> PRO PLAN<sup>®</sup>.", "btnClass": "btn-beige", "btnText": "Узнать больше", "link": "startkit.html"},
+        {"class": "black", "caption": "Рекомендационная программа", "description": "Получай бонусы и баллы за рекомендации и свои покупки!", "btnClass": "btn-transparent", "btnText": "Подробнее о программе", "link": "reco.html"},
+      ]
+    }
+  })
+
+  <section class="info info_spreading">
+    <div class="container">
+      <h2 class="title title-white">Станьте частью Клуба Заводчиков Purina<sup>®</sup> Pro Plan<sup>®</sup></h2>
+      <ul class="info_list">
+        <li class="info_item">Пользуйтесь специальными ценами на покупку кормов Pro Plan<sup>®</sup></li>
+        <li class="info_item">Получайте бесплатные наборы для котят и щенков</li>
+        <li class="info_item">Пользуйтесь удобными сервисами для заводчиков</li>
+        <li class="info_item">Зарабатывайте баллы за покупки корма Purina<sup>®</sup> Pro Plan<sup>®</sup> и рекомендации; меняйте баллы на скидки при покупке корма и другие призы</li>
+        <li class="info_item">Получайте актуальную информацию о выставках, новостях  о разведении, воспитании и генетике</li>
+      </ul>
+      <a class="btn btn-transparent btn-info-spreading" href="breederPage.html">Стать членом Клуба</a>
+    </div>
+  </section>
+
+  @@include("./components/service.html", {
+    context: {
+      "title": "Воспользуйтесь уникальными сервисами",
+      arr: [
+        {"img": "./img/service-1.jpg", "caption": "Календарь беременности кошек и собак", "description": "Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые полезны.", "btnText": "Рассчитать дату", "link": "calendarPregnancy.html"},
+        {"img": "./img/service-2.jpg", "caption": "Генетический калькулятор окрасов", "description": "Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые полезны.", "btnText": "Узнать окрас", "link": "phenotypiс.html"},
+        {"img": "./img/service-3.jpg", "caption": "Родословная Вашего питомца", "description": "Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые полезны.", "btnText": "Составить", "link": "myPets.html"},
+      ]
+    }
+  })
+
+</main>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>

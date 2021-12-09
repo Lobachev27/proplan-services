@@ -1,0 +1,37 @@
+<section class="service">
+  <div class="container">
+    <h2 class="title">@@context.title</h2>
+    <ul class="service_list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <li class="service_item">
+        <div class="service_img_wrapper">
+          <img class="service_img" src="`+context.arr[i].img+`">
+        </div>
+        <div class="service_info">
+          <div class="service_caption">`+context.arr[i].caption+`</div>
+          <div class="service_description">`+context.arr[i].description+`</div>
+          <a class="btn btn-red btn-service" href="`+context.arr[i].link+`">`+context.arr[i].btnText+`</a>
+          <div class="service_line">
+            <svg viewBox="0 0 300 41" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="LK_profile_2-Copy-35" transform="translate(-126.000000, -2416.000000)">
+                  <g id="Group-3" transform="translate(126.000000, 2217.000000)">
+                    <g id="Group-15">
+                      <g id="Group-20" transform="translate(0.000000, 199.000000)">
+                        <g id="Group-28" transform="translate(0.000000, 6.000000)" fill="#000000">
+                          <path d="M0,35 L150,0 L300,35 L0,35 Z" id="Combined-Shape"></path>
+                        </g>
+                        <path d="M0,-1.81188398e-13 L150,33.056 L300,-1.81188398e-13 L150,41 L0,-1.81188398e-13 Z" id="Combined-Shape" fill="#D7BB77" transform="translate(150.000000, 20.500000) scale(1, -1) translate(-150.000000, -20.500000) "></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+</section>

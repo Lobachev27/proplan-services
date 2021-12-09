@@ -1,0 +1,248 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  &_top{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33px;
+    background-color: $red;
+    z-index: 10;
+  }
+  &_purina{
+    &_img{
+      width: 250px;
+      padding-top: 4px;
+      @media screen and (min-width: 768px) {
+        display: block;
+        width: 341px;
+        padding: 0;
+      }
+    }
+  }
+  &_bottom{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: $black;
+    z-index: 10;
+    & .container{
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 40px;
+      @media screen and (min-width: 992px) {
+        justify-content: flex-end;
+      }
+    }
+  }
+  &_logo{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (min-width: 768px) {
+      left: 25px;
+      top: 8px;
+      transform: translateX(0);
+    }
+    &_img{
+      width: 170px;
+      @media screen and (min-width: 768px) {
+        width: 190px;
+      }
+      @media screen and (min-width: 992px) {
+        width: 220px;
+      }
+    }
+    &_link{
+      display: block;
+      z-index: 15;
+    }
+  }
+  &_mobile{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 73px);
+    top: 73px;
+    background-color: $black;
+    z-index: 19;
+    opacity: 0.98;
+    left: -100%;
+    transition: 1s;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+    &.active{
+      left: 0;
+      transition: left 1s;
+    }
+    & .container{
+      height: 100%;
+      padding: 50px 30px;
+    }
+  }
+  &_box{
+    display: none;
+    @media screen and (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 270px);
+    }
+  }
+  &_nav{
+    @media screen and (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    &.mobile{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      @media screen and (min-width: 768px) {
+        justify-content: center;
+        padding-bottom: 73px;
+      }
+    }
+    &_item{
+      position: relative;
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255, 0.3);
+      @media screen and (min-width: 992px) {
+        width: auto;
+        border: none;
+      }
+      &.social{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        & .header_social_item.facebook{
+          position: absolute;
+          right: 60px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    &_link{
+      position: relative;
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      width: 100%;
+      padding: 20px 0;
+      transition: 0.3s;
+      @media screen and (min-width: 992px) {
+        display: inline;
+        font-size: 14px;
+        font-weight: 400;
+        width: initial;
+        padding: 0;
+      }
+      &:hover{
+        color: $gold;
+        transition: 0.3s;
+      }
+    }
+  }
+  &_social{
+    @media screen and (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 160px;
+    }
+    &_text{
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 20px 0;
+      @media screen and (min-width: 992px) {
+        font-size: 14px;
+        font-weight: 400;
+        width: initial;
+        padding: 0;
+      }
+    }
+    &_item{
+      display: block;
+      height: 20px;
+      opacity: 1;
+      &:hover{
+        transition: 0.3s;
+      }
+      &.facebook{
+        background: url("../img/facebook.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 22px;
+        @media screen and (min-width: 992px) {
+          height: 16px;
+        }
+        &:hover{
+          background: url("../img/facebook-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      &.vk{
+        background: url("../img/vk.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 27px;
+        height: 24px;
+        @media screen and (min-width: 992px) {
+          height: 18px;
+          width: 23px;
+        }
+        &:hover{
+          background: url("../img/vk-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  &_hamburger{
+    display: block;
+    background: url("../img/burger-menu.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 16px;
+    justify-self: flex-end;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+    &.active{
+      background: url("../img/cross.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+}

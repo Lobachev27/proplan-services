@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main">
+  <section class="petPage">
+    <div class="container">
+      <h1 class="petPage_title">Добавление питомца</h1>
+      <form id="petForm" class="petPage_form">
+        <div class="petPage_top">
+          <div class="dropzone dropzone-previews" id="petImgDropzone">
+            <div class="dz-default dz-message">
+              <span>Добавить фото питомца</span>
+              <span>В формате *.png, *.jpg, *jpeg не более 3 МБ</span>
+            </div>
+          </div>
+          <div class="petPage_column">
+            <div class="petPage_item long">
+              <div class="petPage_text">Кличка</div>
+              <input class="petPage_input" name="name" type="text" autocomplete="off" required>
+            </div>
+            <div class="petPage_row">
+              <div class="petPage_item type">
+                <div class="petPage_text">Тип питомца</div>
+                <div class="petPage_radioBox">
+                  <label class="radio">
+                    <input id="radioCats" type="radio" name="type" value="cat" required checked>
+                    <div class="radio_text">Кошка</div>
+                  </label>
+                  <label class="radio">
+                    <input id="radioDogs" type="radio" name="type" value="dog" required>
+                    <div class="radio_text">Собака</div>
+                  </label>
+                </div>
+              </div>
+              <div class="petPage_item gender">
+                <div class="petPage_text">Пол питомца</div>
+                <div class="petPage_radioBox">
+                  <label class="radio">
+                    <input id="radioFemale" type="radio" name="gender" value="female" required checked>
+                    <div class="radio_text female"></div>
+                  </label>
+                  <label class="radio">
+                    <input id="radioMale" type="radio" name="gender" value="male" required>
+                    <div class="radio_text male"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="petPage_item long">
+              <div class="petPage_text">Порода</div>
+              <select name="breed" id="petPageBreed"></select>
+            </div>
+            <div class="petPage_row">
+              <div class="petPage_item dtp">
+                <div class="petPage_text">Дата рождение питомца</div>
+                <div class="petPage_datepicker">
+                  <input id="datepicker" class="petPage_calendar" name="date" type="text" autocomplete="off">
+                  <label for="datepicker"></label>
+                </div>
+              </div>
+              <div class="petPage_item number">
+                <div class="petPage_text">Номер родословной</div>
+                <input class="petPage_input" name="number" type="text" autocomplete="off">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="petPage_item long">
+          <div class="petPage_text">Достижения</div>
+          <textarea class="petPage_textarea" name="progress"></textarea>
+        </div>
+        <div class="petPage_btn">
+          <button id="petPageSubmit" class="btn btn-red btn-petPage" type="submit">Сохранить</button>
+          <a class="btn btn-black btn-petPage" href="genealogy.html">Назад</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="massageModal" class="modalDialog">
+  <div class="modalDialog_container">
+    <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+    <div class="modalDialog_caption">Питомец успешно добавлен</div>
+  </div>
+</div>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>

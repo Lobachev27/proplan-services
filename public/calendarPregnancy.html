@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css"
+    />
+    <link rel="stylesheet" href="./css/print.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="header_top">
+        <div class="header_purina">
+          <a class="header_purina_link" href="https://www.purina.ru/">
+            <img
+              class="header_purina_img"
+              src="./img/logo.svg"
+              alt="Purina"
+              title="Purina"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container">
+          <div class="header_logo">
+            <a class="header_logo_link" href="https://www.proplan.ru/">
+              <img
+                class="header_logo_img"
+                src="./img/logo-header.png"
+                alt="Purina Pro Plan"
+                title="Purina Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="header_box">
+            <nav class="header_nav">
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="calendarPregnancy.html"
+                  >Календарь беременности</a
+                >
+              </div>
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="phenotypiс.html"
+                  >Генетический калькулятор окрасов</a
+                >
+              </div>
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="myPets.html"
+                  >Родословная питомца</a
+                >
+              </div>
+            </nav>
+          </div>
+          <div class="header_hamburger"></div>
+        </div>
+      </div>
+    </header>
+    <div class="header_mobile">
+      <div class="container">
+        <nav class="header_nav mobile">
+          <div class="header_nav_item scroll">
+            <a class="header_nav_link" href="#food">Кормление</a>
+          </div>
+          <div class="header_nav_item scroll">
+            <a class="header_nav_link" href="#article">Забота</a>
+          </div>
+          <div class="header_nav_item">
+            <a
+              class="header_nav_link"
+              href="https://www.proplan.ru/dog/?range%5B791%5D=791"
+              target="_blank"
+              >Линейка Pro Plan<sup>®</sup> для щенят</a
+            >
+          </div>
+          <div class="header_nav_item social">
+            <div class="header_social_text">Поделиться</div>
+            <a
+              class="header_social_item facebook"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <a
+              class="header_social_item vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <main id="main" class="main">
+      <section class="intro">
+        <div class="container">
+          <h1 class="title title-white title-main">
+            Календарь беременности кошек и собак
+          </h1>
+        </div>
+        <div class="intro_line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="shape"
+            viewBox="0 0 1000 85"
+            preserveAspectRatio="none"
+          >
+            <polygon
+              fill="#fff"
+              class="ls-triangle-section_left"
+              points="0,0   0,86   500.8,86   500.8,75.5"
+            ></polygon>
+            <polygon
+              fill="#fff"
+              class="ls-triangle-section_right"
+              points="1000,0   1000,86   500,86   500,75.5"
+            ></polygon>
+          </svg>
+        </div>
+      </section>
+      <section id="formCalendar" class="form_wrapper">
+        <div class="container">
+          <h2 class="title title-black title-form">
+            Расчет предполагаемой даты родов
+          </h2>
+          <form id="form" class="form" onsubmit="return false;">
+            <div class="form_item">
+              <div class="form_text">Тип питомца</div>
+              <label class="radio">
+                <input
+                  id="radioCat"
+                  type="radio"
+                  name="type"
+                  value="cat"
+                  required
+                  checked
+                />
+                <div class="radio_text"></div>
+              </label>
+              <label class="radio">
+                <input
+                  id="radioDog"
+                  type="radio"
+                  name="type"
+                  value="dog"
+                  required
+                />
+                <div class="radio_text"></div>
+              </label>
+            </div>
+            <div class="form_item">
+              <div class="form_text">Порода</div>
+              <select name="breed" id="breed"></select>
+            </div>
+            <div class="form_item">
+              <div class="form_text">
+                Количество плодов
+                <div class="article_item_note"></div>
+                <div class="article_item_desc">
+                  Есть много вариантов Lorem Ipsum, но большинство из них имеет
+                  не всегда приемлемые модификации, например, юмористические
+                  вставки или слова, которые даже отдалённо не напоминают
+                  латынь.
+                </div>
+              </div>
+              <select name="progeny" id="progeny">
+                <option>Не определено</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+              </select>
+            </div>
+            <div class="form_item">
+              <div class="form_text">Дата вязки</div>
+              <div class="form_calendar_wrapper">
+                <input
+                  id="datepicker"
+                  class="form_calendar"
+                  type="text"
+                  autocomplete="off"
+                />
+                <label for="datepicker"></label>
+              </div>
+            </div>
+            <div class="form_item">
+              <button id="submit" class="btn btn-red btn-form" type="submit">
+                Рассчитать<a href="#formCalendar"></a>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section id="total" class="total">
+        <div id="printResult">
+          <div class="result cat active">
+            <div class="container">
+              <h2 class="title title-white title-result cat">
+                Предполагаемая дата родов кошки
+              </h2>
+              <div class="result_box">
+                <div id="datePregnancyCat" class="result_value"></div>
+                <div class="result_period">≈ 63-65 дней беременности</div>
+              </div>
+              <div class="result_box-btn">
+                <a
+                  class="btn btn-transparent btn-result"
+                  href="javascript:void(0);"
+                  onclick="open_modal('saveCalendar')"
+                  >Сохранить в профиле</a
+                >
+                <a
+                  class="btn btn-transparent btn-result"
+                  href="javascript:void(0);"
+                  onclick="printJS({printable: 'printResult', type: 'html', targetStyle: ['*'], css: '/css/stylePrint.css'})"
+                  >Скачать расчеты</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="result dog">
+            <div class="container">
+              <h2 class="title title-white title-result dog">
+                Предполагаемая дата родов собаки
+              </h2>
+              <div class="result_box">
+                <div id="datePregnancyDog" class="result_value"></div>
+                <div class="result_period">≈ 64-66 дней беременности</div>
+              </div>
+              <div class="result_box-btn">
+                <a
+                  class="btn btn-transparent btn-result"
+                  href="javascript:void(0);"
+                  onclick="open_modal('saveCalendar')"
+                  >Сохранить в профиле</a
+                >
+                <a
+                  class="btn btn-transparent btn-result"
+                  href="javascript:void(0);"
+                  onclick="printJS({printable: 'printResult', type: 'html', targetStyle: ['*'], css: '/css/stylePrint.css'})"
+                  >Скачать расчеты</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="article cat active">
+            <div class="article_top">
+              <div class="container">
+                <h2 class="title title-red title-article cat">
+                  Позаботьтесь о кошке
+                </h2>
+                <ul class="article_list">
+                  <li class="article_item">
+                    <div class="article_item_top two">
+                      <div class="article_item_caption">
+                        Дата, когда можно визуально определить беременность
+                        кошки
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateUltrasoundCat"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-2.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Живот питомца становится округлым, увеличиваются
+                          соски.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top one">
+                      <div class="article_item_caption">Дата смены питания</div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateFoodChangeCat"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-1.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Мы настоятельно рекомендуем переводить питомца на
+                          специальный корм с первого дня вязки. Беременной кошке
+                          необходим полнорационный корм, который будет
+                          обеспечивать организм витаминами, микро- и
+                          макронутриентами. Важно также следить за тем, чтобы
+                          миска с чистой питьевой водой всегда была полной.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="article_bottom">
+              <div class="container">
+                <h2 class="title title-red title-article second cat">
+                  О котенке
+                </h2>
+                <ul class="article_list">
+                  <li class="article_item">
+                    <div class="article_item_top four">
+                      <div class="article_item_caption">
+                        Предполагаемая дата открытия глаз
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div id="dateEyesCat" class="article_item_date"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-4.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Глаза у котят открываются на 10-14 день, но точную
+                          дату определяет ряд факторов: наследственность,
+                          порода, пол, срок рождения и яркость окружающего
+                          освещения.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top eight">
+                      <div class="article_item_caption">
+                        Открытие наружного слухового прохода
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div id="dateEarsCat" class="article_item_date"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-8.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Есть много вариантов Lorem Ipsum, но большинство из
+                          них имеет не всегда приемлемые модификации, например
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top nine">
+                      <div class="article_item_caption">
+                        Прорезывание молочных зубов
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateTeethingCat"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-9.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Есть много вариантов Lorem Ipsum, но большинство из
+                          них имеет не всегда приемлемые модификации, например
+                          мористические вставки или слова, которые даже
+                          отдалённо не напоминают латынь.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top three">
+                      <div class="article_item_caption">
+                        Дата введения первого прикорма
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div id="dateLureCat" class="article_item_date"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-3.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Прикорм позволяет перейти с материнского молока на
+                          рацион для котят последовательно и безопасно. Он
+                          обеспечивает организм необходимыми для быстрого
+                          метаболизма витаминами и минералами.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top five">
+                      <div class="article_item_caption">
+                        Дата дегельметизации
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateDewormingCat"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-5.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Наличие паразитов ослабляет иммунную систему котенка,
+                          что приводит к выработке меньшего количества антител.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top six">
+                      <div class="article_item_caption">Прививки</div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateGraftFirstCat"
+                            class="article_item_date small"
+                          ></div>
+                          <div class="article_item_info">
+                            Первая прививка
+                            <div class="article_item_note"></div>
+                            <div class="article_item_desc">
+                              Есть много вариантов Lorem Ipsum, но большинство
+                              из них имеет не всегда приемлемые модификации,
+                              например, юмористические вставки или слова,
+                              которые даже отдалённо не напоминают латынь.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="article_item_box">
+                          <div
+                            id="dateGraftSecondCat"
+                            class="article_item_date small"
+                          ></div>
+                          <div class="article_item_info">
+                            Вторая прививка
+                            <div class="article_item_note"></div>
+                            <div class="article_item_desc">
+                              Есть много вариантов Lorem Ipsum, но большинство
+                              из них имеет не всегда приемлемые модификации,
+                              например, юмористические вставки или слова,
+                              которые даже отдалённо не напоминают латынь.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-6.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Пока котенок находится у заводчика, необходимо
+                          провести обязательную вакцинацию.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top seven">
+                      <div class="article_item_caption">
+                        Предполагаемая дата стерилизации
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateSterilizationCat"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-7.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Когда можно приступить к кастрации питомца.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top ten">
+                      <div class="article_item_caption">Начало смены зубов</div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateTeethChangeCat"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-10.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Есть много вариантов Lorem Ipsum, но большинство из
+                          них имеет не всегда приемлемые модификации, например
+                          мористические вставки или слова, которые даже
+                          отдалённо не напоминают латынь.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top eleven">
+                      <div class="article_item_caption">
+                        Переезд котенка в новый дом
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="daterelocationCat"
+                            class="article_item_date big"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-11.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Перед переездом питомца в новый дом, необходимо
+                          убедиться в готовности будущих хозяев к приему нового
+                          члена семьи.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="article dog">
+            <div class="article_top">
+              <div class="container">
+                <h2 class="title title-red title-article dog">
+                  Позаботьтесь о собаке
+                </h2>
+                <ul class="article_list">
+                  <li class="article_item">
+                    <div class="article_item_top two">
+                      <div class="article_item_caption">
+                        Дата, когда можно делать УЗИ собаке
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateUltrasoundDog"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-13.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Увеличиваются соски, они выглядят более яркими, чем
+                          обычно. Спустя несколько дней, живот становится более
+                          округлым.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top one">
+                      <div class="article_item_caption">Дата смены питания</div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateFoodChangeDog"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-12.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Мы настоятельно рекомендуем переводить питомца на
+                          специальный корм с первого дня вязки. Беременной
+                          собаке необходим полнорационный корм, который будет
+                          обеспечивать организм витаминами, микро- и
+                          макронутриентами. Важно также следить за тем, чтобы
+                          миска с чистой питьевой водой всегда была полной.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="article_bottom">
+              <div class="container">
+                <h2 class="title title-red title-article second dog">
+                  О щенке
+                </h2>
+                <ul class="article_list">
+                  <li class="article_item">
+                    <div class="article_item_top four">
+                      <div class="article_item_caption">
+                        Предполагаемая дата открытия глаз
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div id="dateEyesDog" class="article_item_date"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-15.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Обычно, глаза у щенков открываются на 10-13 день
+                          жизни, но точная дата открытия – индивидуальная для
+                          каждого питомца.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top eight">
+                      <div class="article_item_caption">
+                        Открытие наружного слухового прохода
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div id="dateEarsDog" class="article_item_date"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-19.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Есть много вариантов Lorem Ipsum, но большинство из
+                          них имеет не всегда приемлемые модификации, например
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top nine">
+                      <div class="article_item_caption">
+                        Прорезывание молочных зубов
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateTeethingDog"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-20.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Есть много вариантов Lorem Ipsum, но большинство из
+                          них имеет не всегда приемлемые модификации, например
+                          мористические вставки или слова, которые даже
+                          отдалённо не напоминают латынь.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top three">
+                      <div class="article_item_caption">
+                        Дата введения первого прикорма
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div id="dateLureDog" class="article_item_date"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-14.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Прикорм позволяет перейти с материнского молока на
+                          рацион для щенков последовательно и безопасно. Он
+                          обеспечивает организм необходимыми для быстрого
+                          метаболизма витаминами и минералами.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top five">
+                      <div class="article_item_caption">
+                        Дата дегельметизации
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateDewormingDog"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-16.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Наличие паразитов ослабляет иммунную систему щенка,
+                          что приводит к выработке меньшего количества антител.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top six">
+                      <div class="article_item_caption">Прививки</div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateGraftFirstDog"
+                            class="article_item_date small"
+                          ></div>
+                          <div class="article_item_info">
+                            Первая прививка
+                            <div class="article_item_note"></div>
+                            <div class="article_item_desc">
+                              Есть много вариантов Lorem Ipsum, но большинство
+                              из них имеет не всегда приемлемые модификации,
+                              например, юмористические вставки или слова,
+                              которые даже отдалённо не напоминают латынь.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="article_item_box">
+                          <div
+                            id="dateGraftSecondDog"
+                            class="article_item_date small"
+                          ></div>
+                          <div class="article_item_info">
+                            Вторая прививка
+                            <div class="article_item_note"></div>
+                            <div class="article_item_desc">
+                              Есть много вариантов Lorem Ipsum, но большинство
+                              из них имеет не всегда приемлемые модификации,
+                              например, юмористические вставки или слова,
+                              которые даже отдалённо не напоминают латынь.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-17.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Пока щенок находится у заводчика, необходимо провести
+                          обязательную вакцинацию.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top seven">
+                      <div class="article_item_caption">
+                        Предполагаемая дата стерилизации
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateSterilizationDog"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-18.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Для каждой породы особенности кастрации необходимо
+                          обсуждать с ветеринаром. Кастрация собак имеет свои
+                          плюсы, если питомец не будет участвовать в племенном
+                          разведении.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top ten">
+                      <div class="article_item_caption">Начало смены зубов</div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="dateTeethChangeDog"
+                            class="article_item_date"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-21.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Есть много вариантов Lorem Ipsum, но большинство из
+                          них имеет не всегда приемлемые модификации, например
+                          мористические вставки или слова, которые даже
+                          отдалённо не напоминают латынь.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="article_item">
+                    <div class="article_item_top eleven">
+                      <div class="article_item_caption">
+                        Переезд щенка в новый дом
+                      </div>
+                      <div class="article_item_wrapper">
+                        <div class="article_item_box">
+                          <div
+                            id="daterelocationDog"
+                            class="article_item_date big"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="article_item_bottom">
+                      <div class="article_item_img_wrapper">
+                        <img
+                          class="article_item_img"
+                          src="./img/article-22.jpg"
+                        />
+                        <a
+                          class="article_item_link"
+                          href="javascript:void(0);"
+                        ></a>
+                      </div>
+                      <div class="article_item_description">
+                        <div class="article_item_text">
+                          Перед переездом питомца в новый дом, необходимо
+                          убедиться в готовности будущих хозяев к приему нового
+                          члена семьи.
+                        </div>
+                        <a class="article_item_more" href="javascript:void(0);"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="infoCat" class="info cat active">
+          <div class="container">
+            <h2 class="title title-white">Памятка хозяину</h2>
+            <ul class="info_list">
+              Котенок – это не только маленькая радость для всей семьи, но и
+              большая ответственность. Что необходимо знать будущему владельцу
+              питомца перед тем, как взять котенка домой?
+              <li class="info_item">
+                Лучшее время для того чтобы взять котенка – это выходные. В
+                первые дни ему важно уделять много внимания.
+              </li>
+              <li class="info_item">
+                Перед тем как взять котенка, нужно приобрести миски для воды и
+                корма, лежанку, лоток с наполнителем и совком, когтеточку,
+                сумку-переноску и игрушки.
+              </li>
+              <li class="info_item">
+                Приготовить дом для нового жильца: скрыть электропровода,
+                медикаменты, мелкие вещи и другие опасные для него предметы.
+              </li>
+              <li class="info_item">
+                В первые дни пребывания дома, ограничить пространство квартиры
+                для котенка одной комнатой. Это поможет ему легче
+                адаптироваться, а владельцу – следить за его безопасностью.
+              </li>
+              <li class="info_item">
+                Уточнить у заводчика всю необходимую информацию о породе котенка
+                и о том, как следить за его состоянием здоровья и внешнего вида.
+              </li>
+              Обычно котенку достаточно нескольких дней, чтобы привыкнуть к
+              новому месту, но каждый питомец уникален: возможно, ему
+              понадобится немного больше времени, чтобы почувствовать себя
+              комфортно.
+            </ul>
+            <a
+              class="btn btn-transparent btn-info"
+              href="javascript:void(0);"
+              onclick="printJS({printable: 'infoCat', type: 'html', targetStyle: ['*'], css: '/css/stylePrint.css'})"
+              >Распечатать памятку</a
+            >
+          </div>
+        </div>
+        <div id="infoDog" class="info dog">
+          <div class="container">
+            <h2 class="title title-white">Памятка хозяину</h2>
+            <ul class="info_list">
+              Щенок – это не только маленькая радость для всей семьи, но и
+              большая ответственность. Что необходимо знать будущему владельцу
+              питомца перед тем, как взять щенка домой?
+              <li class="info_item">
+                Лучшее время для того чтобы взять щенка – это выходные. В первые
+                дни ему нужно много внимания и заботы.
+              </li>
+              <li class="info_item">
+                Перед тем как взять щенка, нужно приобрести миски для воды и
+                корма, специальные игрушки, лежанку, поводок и ошейник с
+                указанием данных хозяина, средства для ухода за шерстью.
+              </li>
+              <li class="info_item">
+                Приготовить дом для нового жильца: скрыть электропровода,
+                медикаменты, мелкие вещи и другие опасные для него предметы.
+              </li>
+              <li class="info_item">
+                Необходимо следить за чистотой в доме: эта мера позволит
+                дополнительно защитить щенка от инфекций.
+              </li>
+              <li class="info_item">
+                • Уточнить у заводчика всю необходимую информацию о породе
+                щенка, о том, как его дрессировать, как следить за его
+                состоянием здоровья и внешнего вида.
+              </li>
+              Обычно щенку достаточно нескольких дней, чтобы привыкнуть к новому
+              месту, но каждый питомец уникален: возможно, ему понадобится
+              немного больше времени, чтобы почувствовать себя комфортно.
+            </ul>
+            <a
+              class="btn btn-transparent btn-info"
+              href="javascript:void(0);"
+              onclick="printJS({printable: 'infoDog', type: 'html', targetStyle: ['*'], css: '/css/stylePrint.css'})"
+              >Распечатать памятку</a
+            >
+          </div>
+        </div>
+        <div class="cellar">
+          <div class="container">
+            <a
+              class="btn btn-red btn-cellar"
+              href="javascript:void(0);"
+              onclick="open_modal('saveCalendar')"
+              >Сохранить в профиле</a
+            >
+            <a
+              class="btn btn-red btn-cellar"
+              href="javascript:void(0);"
+              onclick="printJS({printable: 'printResult', type: 'html', targetStyle: ['*'], css: '/css/stylePrint.css'})"
+              >Скачать расчеты</a
+            >
+            <a class="btn btn-up" href="#main"></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="saveCalendar" class="modalDialog">
+      <div class="modalDialog_container">
+        <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+        <div class="modalDialog_caption">Введите название расчетов</div>
+        <form
+          id="formSaveCalendar"
+          class="modalDialog_form"
+          onsubmit="return false;"
+        >
+          <input
+            class="modalDialog_input"
+            name="name"
+            type="text"
+            autocomplete="off"
+            placeholder="Введите название"
+            required
+          />
+          <div class="modalDialog_btnBox">
+            <button class="btn btn-red btn-modal" type="submit">
+              Сохранить
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="massageModal" class="modalDialog">
+      <div class="modalDialog_container">
+        <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+        <div class="modalDialog_caption">Расчеты успешно сохранены</div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_top">
+          <div class="footer_logo">
+            <a
+              class="footer_logo_link"
+              href="https://www.proplan.ru/"
+              target="_blank"
+            >
+              <img
+                class="footer_logo_img"
+                src="./img/logo-footer.png"
+                alt="Purina Pro Plan"
+                title="Purina Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="footer_social">
+            <a
+              class="footer_social_item facebook"
+              data-id="fb"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <a
+              class="footer_social_item vk"
+              data-id="vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <nav class="footer_nav">
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/privacy_policy.pdf"
+                target="_blank"
+                >Политика Конфиденциальности</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/legal/"
+                target="_blank"
+                >Правовая информация</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/purina/proplan/frequently-asked-questions/"
+                target="_blank"
+                >Часто задаваемые вопросы</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/vet/"
+                target="_blank"
+                >Клуб ветеринарных специалистов</a
+              >
+            </div>
+          </nav>
+          <div class="footer_text">
+            Purina 2020 ® Владелец товарных знаков: Société des Produits Nestlé
+            S.A.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

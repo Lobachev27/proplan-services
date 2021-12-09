@@ -1,0 +1,174 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.footer{
+  position: relative;
+  background-color: $black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  & .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      align-items: flex-start;
+    }
+  }
+  &_top{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &_bottom{
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+  &_logo{
+    position: relative;
+    &_img{
+      width: 120px;
+      @media screen and (min-width: 768px) {
+        width: 140px;
+      }
+      @media screen and (min-width: 1200px) {
+        width: 160px;
+      }
+    }
+  }
+  &_social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65px;
+    margin: 0;
+    @media screen and (min-width: 768px) {
+      margin: 0 15px 0 0;
+    }
+    &_item{
+      height: 22px;
+      opacity: 1;
+      &:hover{
+        transition: 0.3s;
+      }
+      &.vk{
+        background: url("../img/vk.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 27px;
+        height: 24px;
+        &:hover{
+          background: url("../img/vk-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      &.facebook{
+        background: url("../img/facebook.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 22px;
+        &:hover{
+          background: url("../img/facebook-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  &_nav{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(100% - 260px);
+      @media screen and (min-width: 992px) {
+        width: calc(100% - 300px);
+      }
+    }
+    &_item{
+      display: block;
+      border-bottom: 1px solid #555;
+      margin-bottom: 5px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: 768px) {
+        position: relative;
+        display: flex;
+        width: initial;
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      &:after{
+        display: none;
+        @media screen and (min-width: 768px) {
+          position: relative;
+          display: block;
+          content: '|';
+          font-size: 12px;
+          color: $white;
+          margin: 0 7px;
+          cursor: initial;
+        }
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+    &_link{
+      display: block;
+      width: max-content;
+      font-size: 11px;
+      color: $white;
+      padding: 2px 0 7px;
+      transition: 0.3s;
+      &:hover{
+        color: $gold;
+        transition: 0.3s;
+      }
+      @media screen and (min-width: 768px) {
+        line-height: 1.5em;
+        padding: 0;
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 12px;
+      }
+    }
+  }
+  &_text{
+    font-size: 11px;
+    color: $white;
+    line-height: 1.5em;
+    opacity: 0.5;
+    margin-top: 20px;
+    @media screen and (min-width: 768px) {
+      text-align: right;
+      width: 220px;
+      margin: 0;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 12px;
+      width: 230px;
+    }
+  }
+}

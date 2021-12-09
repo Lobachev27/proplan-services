@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css"
+    />
+    <link rel="stylesheet" href="./css/print.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="header_top">
+        <div class="header_purina">
+          <a class="header_purina_link" href="https://www.purina.ru/">
+            <img
+              class="header_purina_img"
+              src="./img/logo.svg"
+              alt="Purina"
+              title="Purina"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container">
+          <div class="header_logo">
+            <a class="header_logo_link" href="https://www.proplan.ru/">
+              <img
+                class="header_logo_img"
+                src="./img/logo-header.png"
+                alt="Purina Pro Plan"
+                title="Purina Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="header_box">
+            <nav class="header_nav">
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="calendarPregnancy.html"
+                  >Календарь беременности</a
+                >
+              </div>
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="phenotypiс.html"
+                  >Генетический калькулятор окрасов</a
+                >
+              </div>
+              <div class="header_nav_item">
+                <a class="header_nav_link" href="myPets.html"
+                  >Родословная питомца</a
+                >
+              </div>
+            </nav>
+          </div>
+          <div class="header_hamburger"></div>
+        </div>
+      </div>
+    </header>
+    <div class="header_mobile">
+      <div class="container">
+        <nav class="header_nav mobile">
+          <div class="header_nav_item scroll">
+            <a class="header_nav_link" href="#food">Кормление</a>
+          </div>
+          <div class="header_nav_item scroll">
+            <a class="header_nav_link" href="#article">Забота</a>
+          </div>
+          <div class="header_nav_item">
+            <a
+              class="header_nav_link"
+              href="https://www.proplan.ru/dog/?range%5B791%5D=791"
+              target="_blank"
+              >Линейка Pro Plan<sup>®</sup> для щенят</a
+            >
+          </div>
+          <div class="header_nav_item social">
+            <div class="header_social_text">Поделиться</div>
+            <a
+              class="header_social_item facebook"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <a
+              class="header_social_item vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <main id="main" class="main">
+      <section class="posterityPage">
+        <div class="container">
+          <!--<form action="/" method="post" class="dropzone" id="my-awesome-dropzone"></form>-->
+          <h1 class="petPage_title">Добавление помета</h1>
+          <form
+            id="posterityForm"
+            class="posterityPage_form"
+            action="/"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <div class="posterityPage_top">
+              <div class="dropzone dropzone-previews" id="posterityImgDropzone">
+                <div class="dz-default dz-message">
+                  <span>Добавить фото помета</span>
+                  <span>В формате *.png, *.jpg, *jpeg не более 3 МБ</span>
+                </div>
+              </div>
+              <div class="posterityPage_column">
+                <div class="posterityPage_row">
+                  <div class="posterityPage_item dtp">
+                    <div class="posterityPage_text">Дата рождения помета</div>
+                    <div class="posterityPage_datepicker">
+                      <input
+                        id="datepicker"
+                        class="posterityPage_calendar"
+                        name="date"
+                        type="text"
+                        autocomplete="off"
+                      />
+                      <label for="datepicker"></label>
+                    </div>
+                  </div>
+                  <div class="posterityPage_item count">
+                    <div class="posterityPage_text">Количество питомцев</div>
+                    <div class="posterityPage_item_box">
+                      <input
+                        class="posterityPage_input count"
+                        name="counter"
+                        type="number"
+                        min="1"
+                        autocomplete="off"
+                        value="1"
+                        required
+                        disabled
+                      />
+                      <div
+                        id="posterityMinus"
+                        class="posterityPage_input_btn minus"
+                        onclick="minus()"
+                      >
+                        -
+                      </div>
+                      <div
+                        id="posterityPlus"
+                        class="posterityPage_input_btn plus"
+                        onclick="plus()"
+                      >
+                        +
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="posterityPage_row">
+                  <div class="posterityPage_item">
+                    <div class="posterityPage_text">Отец</div>
+                    <select name="father" id="posterityPageFather">
+                      <option value="hide"></option>
+                    </select>
+                  </div>
+                  <div class="posterityPage_item">
+                    <div class="posterityPage_text">Мать*</div>
+                    <select name="mother" id="posterityPageMother">
+                      <option value="hide"></option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="posterityPage_item long">
+              <div class="posterityPage_text">
+                Прикрепите общепометную ведомость и файлы с метриками (не более
+                20)
+              </div>
+              <div class="dropzone dropzone-previews" id="metricsDropzone">
+                <div class="dz-infoBlock">
+                  <span>Добавить файл</span>
+                  <span
+                    >В формате *.png, *.jpg, *jpeg, *pdf, *doc, *docx, *xls,
+                    *xlsx</span
+                  >
+                </div>
+              </div>
+            </div>
+            <label class="posterityPage_checkbox">
+              <input
+                type="checkbox"
+                name="startkitConfirm"
+                id="requestStartkit"
+              />
+              <div class="checkbox_text">
+                Отправить заявку на старт-кит для всех питомцев
+              </div>
+            </label>
+            <div class="posterityPage_phone">
+              <a class="posterityPage_phone_link" href="tel:+79233423254"
+                >+7 923 342-3254</a
+              >
+              <div class="posterityPage_phone_text">
+                Это номер телефона, по которому мы свяжемся с Вами. Если он
+                изменился, сообщите об этом менеджеру.
+              </div>
+            </div>
+            <div class="petPage_btn">
+              <button
+                id="posterityPageSubmit"
+                class="btn btn-red btn-petPage"
+                type="submit"
+              >
+                Сохранить
+              </button>
+              <a class="btn btn-black btn-petPage" href="myPets.html">Назад</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div id="massageModal" class="modalDialog">
+      <div class="modalDialog_container">
+        <div title="Закрыть" class="closeModal" onclick="close_modal()"></div>
+        <div class="modalDialog_caption">Помет успешно добавлен</div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_top">
+          <div class="footer_logo">
+            <a
+              class="footer_logo_link"
+              href="https://www.proplan.ru/"
+              target="_blank"
+            >
+              <img
+                class="footer_logo_img"
+                src="./img/logo-footer.png"
+                alt="Purina Pro Plan"
+                title="Purina Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="footer_social">
+            <a
+              class="footer_social_item facebook"
+              data-id="fb"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <a
+              class="footer_social_item vk"
+              data-id="vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <nav class="footer_nav">
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/privacy_policy.pdf"
+                target="_blank"
+                >Политика Конфиденциальности</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/legal/"
+                target="_blank"
+                >Правовая информация</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/purina/proplan/frequently-asked-questions/"
+                target="_blank"
+                >Часто задаваемые вопросы</a
+              >
+            </div>
+            <div class="footer_nav_item">
+              <a
+                class="footer_nav_link"
+                href="https://www.proplan.ru/vet/"
+                target="_blank"
+                >Клуб ветеринарных специалистов</a
+              >
+            </div>
+          </nav>
+          <div class="footer_text">
+            Purina 2020 ® Владелец товарных знаков: Société des Produits Nestlé
+            S.A.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html")
+
+<main id="main" class="main">
+
+  @@include("./components/introGold-reco.html", {
+    context: {
+      "title": "Рекомендационная программа PRO PLAN<sup>®</sup> Breeders <sup> </sup>\n",
+      "description": "Присоединяйтесь к рекомендационной программе для заводчиков PRO PLAN<sup>®</sup> Breeders, рекомендуйте Purina PRO PLAN<sup>®</sup> владельцам питомцев, получайте баллы и обменивайте их на призы!\n",
+      "link": "https://www.proplan.ru/breeders/reco",
+    }
+  })
+
+  @@include("./components/advantage.html", {
+    context: {
+      "class": "advantage_reco",
+      "title": "Как принять участие?",
+      arr: [
+        {"number": "one", "name": "<span>Зарегистрируйтесь</span><br> в рекомендационной программе и получите персональный код"},
+        {"number": "two", "name": "<span>Передайте</span><br> Ваш персональный код вместе со старт-китом новому владельцу питомца"},
+        {"number": "three", "name": "<span>Получайте</span><br> баллы за регистрацию владельца и его покупки кормов по вашей рекомендации"},
+        {"number": "four", "name": "<span>Копите</span><br> баллы и обменивайте их на подарки"},
+      ]
+    }
+  })
+
+  @@include("./components/mark.html", {
+    context: {
+      "title": "Калькулятор баллов",
+      "text": "*Чем больше владельцев зарегистрировано в программе с Вашим персональным кодом, тем больше баллов Вы получаете каждый месяц.",
+      arr: [
+        {"caption": "Регистрация покупателя в программе", "point": "100 баллов",},
+        {"caption": "Покупка корма владельцем*", "point": "150 баллов",},
+        {"caption": "В среднем при продаже 8 питомцев, вы зарабатываете", "point": "2 000 баллов",},
+      ]
+    }
+  })
+
+  @@include("./components/calc.html", {
+    context: {
+      "title": "Рассчитайте количество<br> баллов",
+      "description": "За покупку корма и выполнение дополнительных заданий Вы также будете получать баллы",
+      arr: [
+        {"input": "<br>Количество пометов в год",},
+        {"input": "Среднее количество<br> детёнышей в помете",},
+        {"input": "В среднем каждый месяц<br> Вы будете получать",},
+      ]
+    }
+  })
+
+  @@include("./components/prize.html", {
+    context: {
+      "title": "Призы",
+      arr: [
+        {"img": "./img/prize-1.png", "name": "Электронные<br> сертификаты", "price": "500 - 20 000 баллов", "link": "javascript:void(0);",},
+        {"img": "./img/prize-2.png", "name": "Лежанка", "price": "2 000 баллов", "link": "javascript:void(0);",},
+        {"img": "./img/prize-3.png", "name": "Балахон", "price": "7 000 баллов", "link": "javascript:void(0);",},
+      ]
+    }
+  })
+
+  <section class="join">
+    <div class="container">
+      <div class="join_caption">Становитесь партнером Purina PRO PLAN<sup>®</sup> и оцените все преимущества рекомендационной программы!</div>
+      <div class="join_boxBtn">
+        <a class="btn btn-red btn-join" href="lk.html">Зарегистрироваться</a>
+        <a class="btn btn-redTransparent btn-join" href="lk.html">Авторизироваться</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+@@include("./components/footer.html")
+
+@@include("./shared/script.html")
+</body>
+</html>
